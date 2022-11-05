@@ -1,7 +1,6 @@
 .page__contacts_form {
-    width: 35%;
+    width: 450px;
     min-width: 350px;
-    max-width: 450px;
     min-height: 250px;
     background: #ffff;
     border: 3px solid #7BC461;

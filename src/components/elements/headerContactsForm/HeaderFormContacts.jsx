@@ -78,22 +78,20 @@ function HeaderFormContacts(props) {
     return (
         <>
             <div className="form__content">
+                 
                 <button className="form__btn__remove" onClick={removeForm}><span>+</span>
                 </button>
                 <form className="form__getData" action="#" method="post" onSubmit={handleSubmit}>
-
                     <div className="form__items">
-
                         <input ref={refInputName} type="text" name='name' maxLength={20} required aria-autocomplete='inline'/>
                         <label htmlFor="name" >Ваше имя</label>
-
                         <input ref={refInputPhone} type="tel" name='phone' required  maxLength="19" placeholder='+375 (11) 111-11-11' aria-autocomplete='inline' onInput={InputKey}/>
                         {toolTip === false && <><div className="header__form_incorrPhone">{popupIncorrectPhone()}</div></>}
                         <label htmlFor="phone" >Ваш телефон</label>
-
                         <button className="form__btn" type='submit'>Отправить</button>
                         </div>
                 </form>
+                
             </div>
         </>
     )

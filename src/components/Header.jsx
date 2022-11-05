@@ -139,27 +139,6 @@ function Header() {
     //     checkPhoneFig(inputPhoneValue);
     //     setInputPhoneFig(refInputPhone.current.value);
     // }
-
-    // function createHeaderForm(){
-        
-    //     return (
-    //         <>
-    //             <div className="header__form__content">
-    //                 <button className="form__btn__remove" onClick={removeForm}><span>+</span></button>
-    //                 <form className="header__form__getData" action="#" method="post" onSubmit={handleSubmit}>
-    //                     <div className="header__form__items">
-    //                         <input ref={refInputName} type="text" name='name' maxLength={20} required />
-    //                         <span>Ваше имя</span>
-    //                         <input ref={refInputPhone} type="tel" name='phone' required onKeyUp={inputPhone} maxLength="19" placeholder='+375 (11) 111-11-11'/>
-    //                         {checkPhone === false && <><div className="header__form_incorrPhone">{popupIncorrectPhone()}</div></>}
-    //                         <span>Ваш телефон</span>
-    //                         <button className="header__form__btn" type='submit' >Отправить</button>
-    //                         </div>
-    //                 </form>
-    //             </div>
-    //         </>
-    //     )
-    // }
  
     return (
         <header className="header">

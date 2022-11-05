@@ -20,8 +20,15 @@ font-family: 'Raleway', sans-serif; */
 html, body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    background-color: #F6FCF4;   
 }
+
+.header, .main, .footer {
+    background-color: #F6FCF4;   
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 
 .container {
     width: 90%;
@@ -72,6 +79,9 @@ li {
     margin-left: 20px;
 }
 
+
+        /* Forms to apply */
+
 .prices__list__item {
     min-width: 360px;
     min-height: 290px;
@@ -80,12 +90,12 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* gap: 20px; */
     background: rgba(31, 46, 25, 0.85);
     border-radius: 30px;
     margin: 0;
     padding: 50px 70px;
 }
+
 
 .item_title {
     font-family: 'Raleway';
@@ -126,6 +136,9 @@ li {
     margin-top: 10px;
 }
 
+/* Top signs on the pages of school and nursery */
+
+
 .page__offeres {
     display: block;
     width: 160px;
@@ -140,6 +153,7 @@ li {
     margin-left: 0;
     padding: 10px 15px;
 }
+
 
 .offer_about {
     display: block;
@@ -159,10 +173,25 @@ li {
     background-position: center;
 }
 
-        /* Header */
-.header {
-    margin: 0 auto;
+        /* Photos on the pages of school and nursery */
+
+.content_photo {
+    position: relative;
+    width: 20%;
+    min-width: 550px;
+    min-height: 340px;
+    border-radius: 30px; 
 }
+
+.content_photo > img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+        /* Header */
 
 .header .container {
     position: fixed;
@@ -181,6 +210,7 @@ li {
     line-height: 18px;
     background-color: #F6FCF4; 
     height: 8vh;
+    padding: 0 25px;
 }
 
 .header__logo > img {
@@ -263,11 +293,365 @@ li {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-    margin-top: 60px;
+    overflow-x: visible;
+    padding-top: 80px;
     
 }
 
-/* About */
+    /* Home */
+.page__home {
+    margin-top: 50px;
+}
+
+.home__present {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    height: 50vh;
+    margin-bottom: 100px;
+}
+
+.home__present__content, .home__present__content_photos {
+    width: 50%;
+}
+
+.home__present__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.home__present__content_title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #1F2E19;
+}
+
+.home__present__content_description {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    color: #1F2E19;
+    width: 100%;
+}
+
+.link__inDetails {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #1F2E19;
+    position: relative;
+}
+
+.link__inDetails span:nth-child(2){
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #AFDC9F;
+    filter: blur(25px);
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.link__inDetails_arrow {
+    top: 10;
+    left: 110px;
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: url('../images/arrow.png') no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border-top: 2px solid #1F2E19;
+    border-right: 2px solid #1F2E19;
+}
+
+.home__present__content_photos {
+    position: relative;
+}
+
+.home__present__content_photos div:nth-child(n+4) {
+    position: absolute;
+}
+
+.home__present__content_photos div:nth-child(n+4) > img {
+    border-radius: 50%;
+}
+
+.home__present__content_photos1 {
+    top: 5%;
+    right: 45%;
+}
+
+.home__present__content_photos2 {
+    top: 5%;
+    right: 5%;
+}
+
+.home__present__content_photos3 {
+    top: 40%;
+    right: 30%;
+}
+
+.home__present__content_photos div:nth-child(-n+3) {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #7BC461;
+    filter: blur(75px);
+}
+
+.home__present__content_curcle1{
+    top: 5%;
+    right: 35%;
+}
+.home__present__content_curcle2{
+    top: 35%;
+    right: 15%;
+}
+.home__present__content_curcle3{
+    top: 45%;
+    right: 50%;
+}
+
+.home__advantages {
+    margin-bottom: 100px;
+}
+
+.home__advantages_title {
+    margin-bottom: 50px;
+}
+
+.home__advantages ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+}
+
+.home__advantages ul:last-child {
+    margin-top: 30px;
+}
+
+.advantages__items {
+    font-size: 14px;
+    flex: 1 1;
+    margin-left: 0;
+    background-color: #ffff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.advantages__items > span:first-child {
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-color: #AFDC9F;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    
+}
+
+.advantages__items > span:last-child {
+    display: block;
+    width: 150px;
+}
+
+.advantages__sign_item1 {
+    background-image: url('../images/home_carbon_crop_health.png');
+}
+
+.advantages__sign_item2 {
+    background-image: url('../images/home_vegetarian_mark.png');
+}
+
+.advantages__sign_item3 {
+    background-image: url('../images/home_leafy-green.png');
+}
+
+.advantages__sign_item4 {
+    background-image: url('../images/home_healthicons_child_care.png');
+}
+
+.advantages__sign_item5 {
+    background-image: url('../images/home_cil_school.png');
+}
+
+.advantages__sign_item6 {
+    background-image: url('../images/home_icon_park_english.png');
+}
+
+.advantages__sign_item7 {
+    background-image: url('../images/home_performing_arts.png');
+}
+
+.advantages__sign_item8 {
+    background-image: url('../images/home_cil_speak.png');
+}
+
+.home__nursary, .home__preparatory, .home__primary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home__nursary {
+    margin-bottom: 50px;
+}
+
+.home__primary {
+    margin: 50px 0;
+}
+
+.home__nursary__content, .home__primary__content, .home__preparatory__content {
+    width: 55%;
+    min-width: 600px;
+}
+
+.home__nursary__content_description, .home__primary__content_description, .home__preparatory__content_description {
+    line-height: 22px;
+}
+
+.home__nursary__photo, .home__primary__photo, .home__preparatory__photo, .events__item {
+    width: 40%;
+    background-color: #ffff;
+    border-radius: 20px 20px 0 0;
+}
+
+.home__nursary__babies_photo, .home__primary__kids_photo, .home__preparatory__kids_photo, .events__item__photo {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 450px;
+    min-height: 350px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.home__nursary__babies_photo {
+    background-image: url('../images/Home_Babies.png');
+}
+
+.home__primary__kids_photo  {
+    background-image: url('../images/kids_running.png');
+}
+
+.home__preparatory__kids_photo {
+    background-image: url('../images/kids_learning.png');
+}
+
+.home__nursary__babies_photo ul, .home__primary__kids_photo span, .home__preparatory__kids_photo span, .events__item_title {
+    position: absolute;
+    width: 75%;
+    min-height: 100px;
+    background: rgba(31, 46, 25, 0.5);
+    border-radius: 10px;
+    color: #ffff;
+    padding: 15px;
+    top: 50%;
+    left: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__nursary__babies_photo ul li{
+    align-self: flex-start;
+    color: #ffff;
+}
+
+.home__nursary__link, .home__primary__link, .home__preparatory__link, .events__item__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0  10px;
+}
+
+.home__nursary__link_price, .home__primary__link_price, .home__preparatory__link_price {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #1F2E19;
+}
+
+.home_iframe {
+    margin-top: 100px;
+}
+
+.video_content {
+    width: 70%;
+    height: auto;
+    min-width: 900px;
+    min-height: 300px;
+    background-image: url('../images/poster_video.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.video_content_title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: #FFFAFA;
+}
+
+.video_content_btn {
+    background: #1F2E19;
+    border: 1px solid #FFFAFA;
+    border-radius: 10px;
+    padding: 10px 25px;
+    cursor: pointer;
+    display: flex;
+}
+
+.video_content_btn span:first-child{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFAFA;
+}
+
+.video_content_btn span:last-child {
+    display: block;
+    padding: 10px;
+    background-image: url('../images/video_arrow.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+    /* About */
 
 .about__content {
     display: flex;
@@ -284,9 +668,11 @@ li {
 
 .about__description {
     width: 75%;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 27px;
     color: #1F2E19;
+
 }
 
 .about__content > div {
@@ -313,10 +699,163 @@ li {
     width: 100%;
     top: 0;
     left: 0;
-    object-fit: contain;
 }
 
-        /* Praparatory */
+    /* Staff */
+.staff__nursary, .staff__office {
+    width: 100%;
+    margin-bottom: 100px;
+}
+.staff__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.staff__items {
+    min-width: 360px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #1F2E19;
+    border-radius: 30px;
+}
+
+.staff__items> img {
+    max-width: 215px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.staff__name, .staff__position {
+    width: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: #1F2E19;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    /* Nursery */
+
+.nursery__content_title {
+    width: 100%;
+    max-width: 630px;
+}
+
+.page__nursery>ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.page__nursery>ul li{
+    flex: 1 1;
+}
+
+.nursery__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 140px;
+}
+
+.nursery__prices__list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picture_book_open {
+    background-image: url('../images/book_open.png');
+}
+
+.picture_heart {
+    background-image: url('../images/heart.png');
+}
+
+.picture_message_circle {
+    background-image: url('../images/message_circle.png');
+}
+
+.picture_carbon_health_cross {
+    background-image: url('../images/carbon_health_cross.png');
+}
+
+.picture_design_safety {
+    background-image: url('../images/design_safety.png');
+}
+
+.picture_heroicons_paint_brush {
+    background-image: url('../images/heroicons_paint_brush.png');
+}
+
+    /* Events */
+
+.page__events {
+    width: 100%;
+    height: 80vh;
+}
+
+.events__list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.events__item__photo, .events__item__link {
+    margin-bottom: 20px;
+}
+
+.events__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events__item__photo{
+    width: 100%;
+}
+
+.events__item__link .link__inDetails {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.events__item__link .link__inDetails .link__inDetails_arrow{
+    left: 160px;
+
+}
+
+.page__events_title {
+    margin: 70px 0;
+}
+
+
+/*  css of references look up in home above */
+.events__item .event1 {
+    background-image: url('../images/event_country_Iliinka.jpg');
+}
+
+.events__item .event2 {
+    background-image: url('../images/event_congratulation_8th_march.jpg');
+}
+
+    /* Praparatory */
 
 .preparatory__title {
     width: 100%;
@@ -339,22 +878,6 @@ li {
     width: 30%;
 }
 
-.preparatory__content_photo {
-    position: relative;
-    width: 20%;
-    min-width: 550px;
-    min-height: 340px;
-    border-radius: 30px; 
-}
-
-.preparatory__content_photo > img {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    object-fit: contain;
-}
-
 .preparatory__prices__list {
     list-style: none;
     width: 100%;
@@ -366,8 +889,7 @@ li {
 .preparatory__schedule_item.part1 p{
     margin-top: 10px;
 }
-
-        /*  Primary  */
+    /*  Primary  */
 
 .page__primary {
     display: flex;
@@ -382,7 +904,11 @@ li {
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    gap: 50px;
+    gap: 30px;
+}
+
+.page__primary>ul li{
+    flex: 1 1;
 }
 
 .primary__content_title{
@@ -392,7 +918,6 @@ li {
 .primary__schedule {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
 }
 
 .schedule_parts {
@@ -474,12 +999,12 @@ li {
     background-image: url('../images/ball.png');
 }
 
-        /* Prices */
+    /* Prices */
 
 .page__prices {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    overflow-x: visible;
 }
 
 .page__prices__nursary {
@@ -570,7 +1095,6 @@ li {
 
 .page__contacts__content {
     display: flex;
-    gap: 10%;
 
 }
 
@@ -590,7 +1114,7 @@ li {
     min-height: 300px;
     border: 1px solid #1F2E19;
     border-radius: 20px;
-    margin-top: 30px;
+    margin-bottom: 100px;
     overflow: hidden;
     position: relative;
 }

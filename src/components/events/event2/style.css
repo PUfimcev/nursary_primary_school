@@ -1,0 +1,41 @@
+.page__event2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 70px;
+}
+.page__event2_img {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.page__event2_img>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page__event2__btn-reverse {
+    display: block;
+    background-image: url('../../../images/events_left-arrow.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 15px 35px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    opacity: 0.4;
+    align-self: flex-end;
+    margin: 10px 0;
+}
+
+.page__event2__btn-reverse:hover {
+    opacity:1;
+}

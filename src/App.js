@@ -17,6 +17,9 @@ const [getDataContact, setgetDataContact] =  useState([]);
 const [dataApply, setDataApply] =  useState([]);
 const [getDataApply, setGetDataApply] =  useState([]);
 
+console.log(dataContact);
+console.log(dataApply);
+
 useEffect(() => {
   if (dataContact.length > 0) {
     (async ()=>{
@@ -27,8 +30,10 @@ useEffect(() => {
       };
     let response = await fetch('http://localhost:3000/contacts', requestOptions);
     let data = await response.json();
-    setgetDataContact(data);
-    setDataContact([]);
+    if (data) {
+      setgetDataContact(data);
+      setDataContact([]);
+    }
     })();
   }
 },[dataContact]);
@@ -37,7 +42,7 @@ useEffect(() => {
     fetch('http://localhost:3000/contacts')
     .then(response => response.json())
     .then(data => {
-      setgetDataContact(data);
+      if (data) {setgetDataContact(data);}
     });
 },[dataContact]);
 
@@ -54,8 +59,10 @@ useEffect(() => {
     fetch('http://localhost:3000/applications', requestOptions)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      setDataApply([]);
+      if (data) {
+        console.log(data);
+        setDataApply([]);
+      }
     });
   }
 },[dataApply]);
@@ -64,7 +71,7 @@ useEffect(() => {
   fetch('http://localhost:3000/applications')
   .then(response => response.json())
   .then(data => {
-    setGetDataApply(data);
+    if (data) {setGetDataApply(data);}
   });
 },[dataApply]);
 

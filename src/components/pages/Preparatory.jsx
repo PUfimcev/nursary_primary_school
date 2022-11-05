@@ -11,8 +11,6 @@ function Preparatory() {
 	const [getNameEduc, setgetNameEduc] = useState('');
 	const [getPriceEduc, setgetPriceEduc] = useState('');
 
-	// console.log(getPriceEduc)
-
 	useEffect(()=>{
 		let applyDataPreparatory = applyData.filter(item => item.preparatory);
 		if (applyDataPreparatory) {
@@ -42,7 +40,7 @@ function Preparatory() {
 					<h3 className="preparatory__content_title">Подготовительный класс</h3>
 					<p className="preparatory__content_description">Уважаемые родители детей, которым остаётся год до школы! Мы предлагаем Вам отдать своих детей в подготовительный класс школы «Кей-Джей-Ви». Класс будет располагаться в отдельном помещении. Дети будут заниматься по отдельной программе.</p>
 				</div>
-				<div className="preparatory__content_photo"><img src={GirlBooks} alt="Девочка изучает книги"></img>
+				<div className="content_photo"><img src={GirlBooks} alt="Девочка изучает книги"></img>
 				</div>
 			</div>
 			<div className='preparatory__schedule'>
@@ -94,7 +92,7 @@ function Preparatory() {
 						)
 					})}
 				</ul>
-				</div>
+			</div>
 		</div>
 	);
 }

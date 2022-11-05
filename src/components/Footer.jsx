@@ -1,12 +1,12 @@
 function Footer() {
     return (
-        <main className="footer">
+        <footer className="footer">
             <div className='container'>
                     <div className='footer__content'>
                         Footer
                     </div>
             </div>
-        </main>
+        </footer>
     );
 }
 
