@@ -39,12 +39,15 @@ useEffect(() => {
 },[dataContact]);
 
 useEffect(() => {
+  if (getDataContact.length === 0 || getDataContact === [])  {
+
     fetch('http://localhost:3000/contacts')
     .then(response => response.json())
     .then(data => {
       if (data) {setgetDataContact(data);}
     });
-},[dataContact]);
+  }
+},[dataContact, getDataContact]);
 
 console.log(getDataContact);
 console.log(getDataApply);
@@ -68,12 +71,14 @@ useEffect(() => {
 },[dataApply]);
 
 useEffect(() => {
-  fetch('http://localhost:3000/applications')
-  .then(response => response.json())
-  .then(data => {
-    if (data) {setGetDataApply(data);}
-  });
-},[dataApply]);
+  if (getDataApply.length === 0 || getDataApply === []) {
+    fetch('http://localhost:3000/applications')
+    .then(response => response.json())
+    .then(data => {
+      if (data) {setGetDataApply(data);}
+    });
+  }
+},[dataApply, getDataApply]);
 
   return (
     <>

@@ -56,89 +56,10 @@ function Header() {
         linkPage.classList.add('active');
     }
 
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     let inputPhoneValue = refInputPhone.current.value;
-    //     let inputNameValue = refInputName.current.value;
-
-    //     if (checkPhone === true) {
-    //         console.log(inputNameValue, inputPhoneValue);
-    //         setCheckPhone(true);
-    //         // setInputPhoneFig('');
-    //     } else {
-    //         return;
-    //     }
-    //     // console.log(inputPhoneValue.lengt)
-    //     // setCheckPhone(true);
-    //     setButton(false);
-    // }
-
-    // function checkPhoneFig(elem) {
-    //     let regExp  = /^\+[3][7][5]\ \((29|44|33|25)\)\ [1-9][0-9]{2}\-[0-9]{2}\-[0-9]{2}$/gi;
-    //     console.log(elem);
-    //     if (regExp.test(elem) === true || elem === undefined || elem === '') {
-    //         setCheckPhone(true);
-    //     } else {
-    //         setCheckPhone(false);
-    //     }
-    // }
-    
-    // function popupIncorrectPhone() {
-    //     return (
-    //         <>
-    //             <div className='input__phone-incorrect'>
-    //                 Неверно введен номер мобильного телефона. Повторите ввод.
-    //             </div>
-    //         </>
-    //     )
-    // }
-
-    // function removeForm() {
-    //     setButton(false);
-    //     return;
-    // }
-
     function showHeaderForm() {
         setButton(true);
         return;
     }
-
-    // function inputPhone(e) {
-    //     let inputPhoneValue = refInputPhone.current.value;
-    //     if(!inputPhoneValue) return;
-    //     inputPhoneValue = refInputPhone.current.value.replace(/\D/gi, '');
-    //     const key = +e.key;
-
-        
-    //     inputPhoneValue = inputPhoneValue.replace(/\D/gm, '');
-        
-    //     if (key !== 0 && (key === ' ' || isNaN(key))) {
-    //         inputPhoneValue = inputPhoneValue.split('');
-            
-    //         inputPhoneValue.pop();
-
-    //         inputPhoneValue = inputPhoneValue.join('');
-
-    //         refInputPhone.current.inputPhoneValue = inputPhoneValue;
-
-    //         return;
-    //     }
-        
-    //     inputPhoneValue = inputPhoneValue.replace(/(\d{1,3})(\d{1,2})(\d{1,3})(\d{1,2})(\d{1,2})/, '+$1 ($2) $3-$4-$5');
-        
-    //     refInputPhone.current.value = inputPhoneValue;
-
-
-    //     let regExp  = /^\+[3][7][5]\ \((29|44|33|25)\)\ [1-9][0-9]{2}\-[0-9]{2}\-[0-9]{2}$/gi;
-    //     if (regExp.test(inputPhoneValue) === true || inputPhoneValue.length  === 1 || inputPhoneValue === '') {
-    //         setCheckPhone(true);
-    //     } else {
-    //         setCheckPhone(false);
-    //     }
-
-    //     checkPhoneFig(inputPhoneValue);
-    //     setInputPhoneFig(refInputPhone.current.value);
-    // }
  
     return (
         <header className="header">

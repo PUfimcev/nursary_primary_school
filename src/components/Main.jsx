@@ -29,10 +29,13 @@ import Event2_Image_4 from '../images/event2_img4.jpg';
 export const MainContext = React.createContext();
 
 function Main() {
+
+// Фото событий
     const imgListEvent1 = [Event1_Image_1, Event1_Image_2, Event1_Image_3, Event1_Image_4];
 
     const imgListEvent2 = [Event2_Image_1, Event2_Image_2, Event2_Image_3, Event2_Image_4];
-    
+
+// POPUP зявления
     const applyData = [
         { junior: [ {name: 'Сад - младшая группа', title: 'Полдня', time: '8.00 — 14.00', price: '330 $' }, {name: 'Сад - младшая группа', title: 'Полный день', time: '8.00 — 19.00', price: '580 $' }, {name: 'Сад - младшая группа', title: 'Почасовая оплата', time: 'После 14.00', price: '3$ за час' }]},
         { middle: [ {name: 'Сад - средняя группа', title: 'Полдня', time: '8.00 — 14.00', price: '340 $' }, {name: 'Сад - средняя группа', title: 'Полный день', time: '8.00 — 19.00', price: '600 $' }, {name: 'Сад - средняя группа', title: 'Почасовая оплата', time: 'После 14.00', price: '3$ за час' }]},
@@ -41,7 +44,7 @@ function Main() {
         { primary: [ {name: 'Начальная школа', title: 'Полдня', time: '8.00 — 15.00', price: '670 $' }, {name: 'Начальная школа', title: 'День пребывания в школе', time: '8.00 — 12.00', price: '10 $' }]}		
 	];
 
-
+// POPUP контент
     const displayContent = [
         {video: [{name: 'school_tour', src: 'https://youtu.be/0cfGU-rO9DY', title: '3D тур по школе'}]},
         {pictureEvent1: [{name: 'picture1', href: Event1_Image_1, alt: "Фотографии с масленницы в усадьбе Ильинка"}, {name: 'picture2', href: Event1_Image_2, alt: "Фотографии с масленницы в усадьбе Ильинка"},{name: 'picture3', href: Event1_Image_3, alt: "Фотографии с масленницы в усадьбе Ильинка"},{name: 'picture4', href: Event1_Image_4, alt: "Фотографии с масленницы в усадьбе Ильинка"}]},

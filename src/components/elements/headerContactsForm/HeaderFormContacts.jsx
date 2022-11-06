@@ -69,7 +69,7 @@ function HeaderFormContacts(props) {
         return (
             <>
                 <div className='input__phone-incorrect'>
-                    Неверно введен номер телефона. Повторите ввод.
+                Неверно введен номер телефона. Введите по шаблону.
                 </div>
             </>
         )

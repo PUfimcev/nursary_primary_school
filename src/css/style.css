@@ -295,6 +295,7 @@ li {
     overflow-y: hidden;
     overflow-x: visible;
     padding-top: 80px;
+    padding-bottom: 100px;
     
 }
 
@@ -702,16 +703,22 @@ li {
 }
 
     /* Staff */
-.staff__nursary, .staff__office {
+
+.staff__nursary, .staff__teachers, .staff__office {
     width: 100%;
     margin-bottom: 100px;
 }
+
+.staff__teachers__wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
 .staff__list {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    list-style: none;
+    gap: 30px;
 }
 
 .staff__items {
@@ -733,13 +740,17 @@ li {
 }
 
 .staff__name, .staff__position {
-    width: 50%;
+    width: 60%;
     font-weight: 600;
     font-size: 18px;
     line-height: 20px;
     color: #1F2E19;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.staff__position {
+    width: 75%;
 }
 
     /* Nursery */
@@ -918,12 +929,14 @@ li {
 .primary__schedule {
     display: flex;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 .schedule_parts {
     flex: 1 1;
     display: flex;
     flex-direction: column;
+    
 }
 
 .part1 {
@@ -1090,7 +1103,8 @@ li {
     font-size: 15px;
     line-height: 18px;
     color: rgba(0, 0, 0, 0.5);
-    margin: 40px 0;
+    margin-top: 40px;
+    margin-bottom: 70px;
 }
 
 .page__contacts__content {
@@ -1114,15 +1128,122 @@ li {
     min-height: 300px;
     border: 1px solid #1F2E19;
     border-radius: 20px;
-    margin-bottom: 100px;
     overflow: hidden;
     position: relative;
 }
 
-.page__contacts_iframe > iframe {
+.page__contacts_iframe > iframe, .map__preloader {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+
+    /* Footer */
+
+.footer {
+    background-color: #1F2E19;
+    color:#FFFAFA;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+.footer__logo > img {
+    display: block;
+}
+
+.footer__connect_form p {
+    color:#FFFAFA;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    height: 100%;
+}
+
+
+.footer__contact-data {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-data__icon-pnone a {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/footer_icon_phone.png');
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    margin-top: 25px;
+} 
+
+.contact-data__icon-pnone a:hover {
+    background-image: url('../images/footer_icon_phone_hover.png');
+}
+
+
+.address_elem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.address_elem > a{
+    color: 
+    #FFFAFA;
+    cursor: pointer;
+}
+
+.contact-data__socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.contact-data__socials a {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.contact-data__socials a:first-child {
+    width: 35px;
+    height: 35px;
+    background-image: url('../images/footer_icon_insta.png');
+} 
+
+.contact-data__socials a:last-child {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/footer_icon_fb.png');
+} 
+
+
+.contact-data__socials a:first-child:hover {
+    width: 35px;
+    height: 35px;
+    background-image: url('../images/footer_icon_insta_hover.png');
+}
+
+.contact-data__socials a:last-child:hover {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/footer_icon_fb_hover.png');
+    border-radius: 50%;
+} 
+
+

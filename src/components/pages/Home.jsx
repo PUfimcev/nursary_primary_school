@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from '../Main';
 import Girl from '../../images/Girl.png';
 import Boy from '../../images/Boy.png';
 import GirlBoyBalls from '../../images/GirlBoyBalls.png';
+import GoogleMap from '../../images/map_preloder.png'; 
 
 function Home() {
 	const { setCreateContent, setNameContent, setContentAbout } = useContext(MainContext);
+
+	const [isLoading, setLoading] = useState(true);
 
 	function page(data) {
         const linkPage = document.querySelector(`.nav__link.${data}`);
@@ -21,13 +24,28 @@ function Home() {
         linkPage.classList.add('active');
     }
 
+	function pageTop(){
+        let mainElem = document.querySelector('.main__content');
+        mainElem.scrollIntoView({ block: "start"})
+    }
+
+	function handleOnLoad() {
+		setLoading(false);
+	}
+
+	function Preloader(){
+		return (
+			<img className='map__preloader' src={GoogleMap} alt="Google map" />
+		)	
+	}
+
 	return (
 		<div className="page__home">
 			<div className="home__present">
 				<div className="home__present__content">
 					<h1 className="home__present__content_title">детский сад — начальная школа «Кей-ДЖЕЙ-Ви»</h1>
 					<p className="home__present__content_description">Мы работаем уже более 30 лет! Мы постоянно совершенствуемся, чтобы создавать лучшие условия для творческого и интеллектуального развития учеников.</p>
-					<Link onClick={() => {page('about');}} className="link__inDetails" to="/about/about/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+					<Link onClick={() => {page('about'); pageTop();}} className="link__inDetails" to="/about/about/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 				</div>
 				<div className="home__present__content_photos">
 					<div className="home__present__content_curcle1"></div>
@@ -67,7 +85,7 @@ function Home() {
 						<li>Cтаршая (5-6 лет)</li>
 					</ul></div>
 					<div className="home__nursary__link" >
-						<span className="home__nursary__link_price">от 330 $ в месяц</span><Link onClick={() => {page('nursary');}} className="link__inDetails" to="/nursary/junior/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__nursary__link_price">от 330 $ в месяц</span><Link onClick={() => {page('nursary'); pageTop();}} className="link__inDetails" to="/nursary/junior/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 			</div>
@@ -75,7 +93,7 @@ function Home() {
 				<div className="home__preparatory__photo">
 					<div className="home__preparatory__kids_photo"><span>Мы предлагаем Вам отдать своих детей в подготовительный класс школы «Кей-Джей-Ви», где Дети будут заниматься по отдельной программе.</span></div>
 					<div className="home__preparatory__link" >
-						<span className="home__preparatory__link_price">от 372 $ в месяц</span><Link onClick={() => {page('school');}} className="link__inDetails" to="/school/preparatory/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__preparatory__link_price">от 372 $ в месяц</span><Link onClick={() => {page('school'); pageTop();}} className="link__inDetails" to="/school/preparatory/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 				<div className="home__preparatory__content">
@@ -104,7 +122,7 @@ function Home() {
 				<div className="home__primary__photo">
 					<div className="home__primary__kids_photo"><span>Обучение с 1 по 4 классы, включая пребывание в группах продленного дня</span></div>
 					<div className="home__primary__link" >
-						<span className="home__primary__link_price">от 470 $ в месяц</span><Link onClick={() => {page('school');}} className="link__inDetails" to="/school/primary/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__primary__link_price">от 470 $ в месяц</span><Link onClick={() => {page('school'); pageTop();}} className="link__inDetails" to="/school/primary/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 			</div>
@@ -115,7 +133,9 @@ setContentAbout('school_tour'); setCreateContent(true); }} ><span>Посмотр
 			</div>
 
 			
-			<div className='page__contacts_iframe home_iframe'><iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" ></iframe></div>
+			<div className='page__contacts_iframe home_iframe'>
+				{isLoading && <Preloader/>}
+				<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe></div>
 		</div>
 	);
 }

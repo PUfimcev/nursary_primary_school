@@ -62,7 +62,7 @@ function ContactForm(){
     function popupIncorrectPhone() {
         return (
             <div className='input__phone-incorrect'>
-                Неверно введен номер мобильного телефона. Повторите ввод.
+                Неверно введен номер телефона. Введите по шаблону.
             </div>
         )
     }

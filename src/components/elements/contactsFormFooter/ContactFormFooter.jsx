@@ -2,47 +2,32 @@ import { useContext, useRef, useState } from 'react';
 import { DataContacts } from '../../../App'; 
 import './style.css';
 
-function ApplyForm(props){
-    const { setButton, getPriceEduc, setgetPriceEduc, getNameEduc, setgetNameEduc } = props.sendApplyData;
-    const { dataApply, setDataApply } = useContext(DataContacts);
+function ContactFormFooter(){
+
+    const { dataContact, setDataContact } = useContext(DataContacts);
     const [toolTip, setToolTip] =  useState(true);
 	const refInputName = useRef();
-	const refInputAge = useRef();
     const refInputPhone = useRef();
-
-    // console.log(getPriceEduc)
 
     function handleSubmit(event) {
         event.preventDefault();
         const inputNameValue = refInputName.current.value;
-        const inputAgeValue = refInputAge.current.value;
         const inputPhoneValue = refInputPhone.current.value;
-        if (!inputNameValue && !inputPhoneValue && !inputAgeValue && !getPriceEduc) return;
+        if (!inputNameValue && !inputPhoneValue) return;
         
-        const contactTmp = dataApply;
+        const contactTmp = dataContact;
 
         if (toolTip === true && inputPhoneValue.length === 19) {
-            contactTmp.push({ nameEduc: getNameEduc, price: getPriceEduc, name: inputNameValue, age: inputAgeValue, phone: inputPhoneValue});
-        
-            setDataApply([...contactTmp]);
-            
+            contactTmp.push({ name: inputNameValue, phone: inputPhoneValue});
+            setDataContact([...contactTmp]);
+
             refInputName.current.value = '';
-            refInputAge.current.value = '';
             refInputPhone.current.value = '';
+        
         } else {
             return;
         }
-        setButton(false);
-        setgetNameEduc(''); 
-        setgetPriceEduc('');
-    }
-
-
-    function removeForm() {
-        setgetNameEduc(''); 
-        setgetPriceEduc('');
-        setButton(false);
-        return;
+        
     }
 
     function InputKey() {
@@ -51,11 +36,11 @@ function ApplyForm(props){
         // eslint-disable-next-line no-useless-escape
         if (inputValue.match(/[^+0-9\s\(\)-]/gi)) inputValue = inputValue.replace(/[^+0-9\s\(\)-]/gi, '');
 
-        refInputPhone.current.value = inputValue;
+        refInputPhone.current.value = inputValue; 
         if (refInputPhone.current.value === '') {
             setToolTip(true);
         }
-        checkPhone(refInputPhone.current.value);        
+        checkPhone(refInputPhone.current.value);
     }
 
     function checkPhone(data) {
@@ -76,41 +61,38 @@ function ApplyForm(props){
 
     function popupIncorrectPhone() {
         return (
-            <>
-                <div className='input__phone-incorrect'>
+            <div className='input__phone-incorrect'>
                 Неверно введен номер телефона. Введите по шаблону.
-                </div>
-            </>
+            </div>
         )
     }
 
+
     return (
         <>
-            <div className="page__apply_form">
-                <button className="form__btn__remove" onClick={removeForm}><span>+</span>
-                </button>
-                <div>Оставьте свои контакты и мы свяжемся с Вами</div>
-                <form className="form__getData" action="#" method="post" onSubmit={handleSubmit}>
+            <div className="footer__page__contacts_form">
+					
+                <form className="footer__form__getData" action="#" method="post" onSubmit={handleSubmit}>
 
-                    <div className="form__items">
-
+                    <div className="footer__form__items">
+                        <span>Остались вопросы?</span>
                         <input ref={refInputName} type="text" name='name' maxLength={20} required aria-autocomplete='inline'/>
-                        <label htmlFor="name" aria-autocomplete='inline'>Ваше имя</label>
-                        <input ref={refInputAge} type="number" name='age' maxLength={2} required />
-                        <label htmlFor="name" >Возраст ребенка</label>
+                        <label htmlFor="name" >Ваше имя</label>
 
                         <input ref={refInputPhone} type="tel" name='phone' required  maxLength="19" placeholder='+375 (11) 111-11-11' aria-autocomplete='inline' onInput={InputKey}/>
-                        {toolTip === false && <><div className="header__form_incorrPhone">{popupIncorrectPhone()}</div></>}
+                        {toolTip === false && <div className="header__form_incorrPhone">{popupIncorrectPhone()}</div>}
                         <label htmlFor="phone" >Ваш телефон</label>
 
-                        <button className="form__btn" type='submit'>Записаться</button>
+                        <button className="footer__btn__form" type='submit'>Отправить</button>
                     </div>
                 </form>
             </div>
         </>
+
+
     )
 
 
 }
 
-export default ApplyForm;
+export default ContactFormFooter;

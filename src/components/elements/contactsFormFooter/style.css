@@ -1,0 +1,76 @@
+.footer__page__contacts_form {
+    min-width: 400px;
+    min-height: 250px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__form__getData {
+    width: 65%;
+}
+
+.footer__form__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    font-size: 15px;
+    line-height: 20px;
+    color: #FFFAFE; 
+}
+
+.footer__form__items input {
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: transparent;
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #FFFAFE;
+}
+
+.footer__form__items input:nth-child(4) {
+    margin-top: 20px;
+}
+
+.footer__form__items input:nth-child(4)::placeholder{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #A3A39F;
+}
+
+.footer__btn__form {
+    background-color: #FFFAFA;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1F2E19;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.header__form_incorrPhone{
+    width: 100%;
+    min-width: 200px;
+    position: relative;
+}
+.input__phone-incorrect {
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0px rgb(53, 52, 52);
+    border-radius: 10px;
+    min-width: 100px;
+    color: crimson;
+    font-size: 15px;
+    padding: 5px 5px 5px 15px;
+    white-space: pre-line;
+    
+}
