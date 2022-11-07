@@ -1,33 +1,34 @@
-import { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './style.css';
 
 function NavFooter() {
 
-    const [link, setLink] = useState('');
+    // const [link, setLink] = useState('');
 
-    useEffect(() => {
-        let pathBrows = window.location.pathname.split(/\/*\//)[1];
-        let linkPage = link;
+    // useEffect(() => {
+    //     let pathBrows = window.location.pathname.split(/\/*\//)[1];
+    //     let linkPage = link;
 
-        if (linkPage === '' || linkPage === null) {
+    //     if (linkPage === '' || linkPage === null) {
 
-            if (pathBrows === 'nursary_primary_school') {
-                linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);
-                linkPage.classList.add('active');
-            } else {
-                linkPage = document.querySelector(`.nav__link.${pathBrows}`);
-                linkPage.classList.add('active');
-            } 
-        }
+    //         if (pathBrows === 'nursary_primary_school') {
+    //             linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);
+    //             linkPage.classList.add('active');
+    //         } else {
+    //             linkPage = document.querySelector(`.nav__link.${pathBrows}`);
+    //             linkPage.classList.add('active');
+    //         } 
+    //     }
 
-    }, [link]);
+    // }, [link]);
     
     function currentPage(event) {     
         
         let elem = event.target;
         if (!elem) return;
-        setLink(elem);
+        // setLink(elem);
 
         let elemTmp = elem.href.split(/\/*\//)[2];
         elem = document.querySelector(`.nav__link.${elemTmp}`);

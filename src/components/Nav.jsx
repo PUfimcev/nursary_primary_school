@@ -1,32 +1,36 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 
 function Nav() {
 
     const [link, setLink] = useState('');
 
-    useEffect(() => {
-        let pathBrows = window.location.pathname.split(/\/*\//)[1];
-        let linkPage = link;
+    // useEffect(() => {
+    //     let pathBrows = window.location.pathname.split(/\/*\//)[1];
+    //     let linkPage = link;
 
-        if (linkPage === '' || linkPage === null) {
+    //     if (linkPage === '' || linkPage === null) {
 
-            if (pathBrows === 'nursary_primary_school') {
-                linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);
-                linkPage.classList.add('active');
-            } else {
-                linkPage = document.querySelector(`.nav__link.${pathBrows}`);
-                linkPage.classList.add('active');
-            } 
-        }
+    //         if (pathBrows === 'nursary_primary_school') {
+    //             linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);
+    //             linkPage.classList.add('active');
+    //         } else {
+    //             linkPage = document.querySelector(`.nav__link.${pathBrows}`);
+    //             linkPage.classList.add('active');
+    //         } 
+    //     }
 
-    }, [link]);
+    // }, [link]);
+    console.log(link)
     
     function currentPage(event) {     
         
         let elem = event.target;
         if (!elem) return;
         setLink(elem);
+
+        // console.log(elem.id)
 
         let elemTmp = elem.href.split(/\/*\//)[2];
         elem = document.querySelector(`.nav__link.${elemTmp}`);
@@ -67,7 +71,7 @@ function Nav() {
 	return (
 		<nav className="nav">
             <ul>
-                <li><Link className="nav__link nursary_primary_school" onClick={()=>{currentPage(); pageTop();}} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li>
+                <li ><Link id="home"  className="nav__link nursary_primary_school" onClick={()=>{currentPage(); pageTop();}} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li>
                 <li>
                     <Link className="nav__link about" onMouseOver={hover} >О нас</Link>
                     <ul>

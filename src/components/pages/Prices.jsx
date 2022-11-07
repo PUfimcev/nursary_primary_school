@@ -1,3 +1,4 @@
+import React from 'react';
 import KidsPlaying from '../../images/kids_playing_together.png';
 import KidDoHomework from '../../images/kid_do_homework.png';
 import KidSmile from '../../images/kid_smiling.png';

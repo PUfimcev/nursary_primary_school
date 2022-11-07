@@ -1,3 +1,4 @@
+import React from 'react';
 import Footer_logo from '../images/Logo2.png';
 import { Link } from "react-router-dom";
 import ContactFormFooter from '../components/elements/contactsFormFooter/ContactFormFooter';
@@ -39,8 +40,8 @@ function Footer() {
                             <span>УНП 190790556</span>
                             </div>
                             <div className="contact-data__socials">
-                                <a rel="noreferrer" target="_blank" href='https://www.instagram.com/' title='instagram' >{/* empty a */}</a>
-                                <a rel="noreferrer" target="_blank" href='https://ru-ru.facebook.com/' title='facebook' >{/* empty a */}</a>
+                                <a rel="noopener noreferrer" target="_blank" href='https://www.instagram.com/' title='instagram' >{/* empty a */}</a>
+                                <a rel="noopener noreferrer" target="_blank" href='https://ru-ru.facebook.com/' title='facebook' >{/* empty a */}</a>
                             </div>
 
                         </div>

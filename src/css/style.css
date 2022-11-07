@@ -9,6 +9,11 @@ font-family: 'Raleway', sans-serif; */
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+@keyframes timeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
         /* General propertis */
 
 * {
@@ -226,7 +231,7 @@ li {
     margin: 0 30px;
 }
 
-.header__btn, .form__btn {
+.header__btn, .form__btn, .review__btn {
     color: #F6FCF4;
     padding: 10px 45px;
     margin-left: 30px;
@@ -243,7 +248,7 @@ li {
     padding: 5px;
 }
 
-.nav a:hover, .header__phone a:hover, .header__btn:hover, .header__form__btn:hover, .form__btn:hover {
+.nav a:hover, .header__phone a:hover, .header__btn:hover, .header__form__btn:hover, .form__btn:hover, .review__btn:hover {
     color: #7BC461;
 }
 
@@ -652,6 +657,129 @@ li {
     margin-left: 10px;
 }
 
+.home__review {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.review__content_slider {
+    width: 100%;
+}
+
+.review__content_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* overflow: hidden; */
+    gap: 30px;
+}
+
+.review__item__title, .review__short-content {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1F2E19;
+}
+
+.review__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    width: 50%;
+    min-width: 560px;
+    min-height: 330px;
+    border: 1px solid #1F2E19;
+    border-radius: 20px;   
+    padding: 0 40px; 
+}
+
+.review__item div:first-child, .review__item__full div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review__item>div:last-child {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.review__item__img {
+    width: 230px;
+    height: 230px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.review__item__img>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.review__item__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.review__btn {
+    width: 70%;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.review__full-content_wrapper{
+    display: flex;
+    justify-content: center;
+}
+.review__item__full {
+    opacity: 0;
+    animation: opacity 1s ease-in-out 0.1s 1 forwards;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #1F2E19;
+    border-radius: 20px;    
+    
+}
+
+.review__btn_remove {
+    font-size: 30px;
+    align-self: flex-end;
+    margin: 10px 20px 0 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.review__btn_remove:hover {
+    background-color: rgb(229, 224, 224);
+}
+
+.review__full-content {
+    width: 75%;
+    margin: 40px auto;
+    white-space: pre-line;
+
+
+}
     /* About */
 
 .about__content {
@@ -704,9 +832,14 @@ li {
 
     /* Staff */
 
+.page__staff{
+    width: 100%;
+}
+
 .staff__nursary, .staff__teachers, .staff__office {
     width: 100%;
     margin-bottom: 100px;
+    
 }
 
 .staff__teachers__wrapper {
@@ -717,8 +850,12 @@ li {
 .staff__list {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 30px;
+    transition: transform 1s ease-in-out;
+    
 }
 
 .staff__items {
@@ -752,6 +889,42 @@ li {
 .staff__position {
     width: 75%;
 }
+
+/* .staff__slider {
+    width: 100%;
+    position: relative;
+}
+
+.slider__btn-left, .slider__btn-right {
+    position: absolute;
+    z-index: 10;
+    font-size: 25px;
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+    border: 0;
+    opacity: 0.5;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider__btn-left>span, .slider__btn-right>span{
+    text-align: center;
+}
+
+.slider__btn-left {
+    border-radius: 30px 0 0 30px;
+    left: 25px;
+}
+
+.slider__btn-right {
+    border-radius: 0 30px 30px 0;
+    right: -22px;
+}
+
+.slider__btn-left:hover, .slider__btn-right:hover {
+    opacity: 0.9;
+} */
 
     /* Nursery */
 
@@ -1132,7 +1305,7 @@ li {
     position: relative;
 }
 
-.page__contacts_iframe > iframe, .map__preloader {
+.page__contacts_iframe > iframe, .page__contacts_iframe >.map__preloader {
     position: absolute;
     top: 0;
     left: 0;

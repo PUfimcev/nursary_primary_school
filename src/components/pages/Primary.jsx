@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
 import Image1 from '../../images/primary_image_1.png';

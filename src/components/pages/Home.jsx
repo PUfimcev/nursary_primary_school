@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState, useEffect,  useRef } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from '../Main';
 import Girl from '../../images/Girl.png';
@@ -7,9 +7,13 @@ import GirlBoyBalls from '../../images/GirlBoyBalls.png';
 import GoogleMap from '../../images/map_preloder.png'; 
 
 function Home() {
-	const { setCreateContent, setNameContent, setContentAbout } = useContext(MainContext);
+	const { setCreateContent, setNameContent, setContentAbout, ReviewContent } = useContext(MainContext);
 
 	const [isLoading, setLoading] = useState(true);
+	const [btn, setBtn] = useState(false);
+	const [indxReview, getIndxReview] = useState(0);
+
+	const reviewFull = useRef();
 
 	function page(data) {
         const linkPage = document.querySelector(`.nav__link.${data}`);
@@ -39,6 +43,51 @@ function Home() {
 		)	
 	}
 
+	function removeBtnReview() {
+		let reviewFullElem = reviewFull.current;
+
+		reviewFullElem.style.animation = 'timeout 1s ease-in-out 1 forwards';
+		setTimeout(()=>{setBtn(false);}, 1000);
+		
+        
+    }
+
+	function setFuncBtn(){
+		setBtn(true);
+		return;
+	}
+
+	function getFuncIndxReview(data){
+		getIndxReview(data);
+		return;
+	}
+
+	useEffect(()=> {
+		getItemReview();
+	},[])
+	
+	function getItemReview() {
+		let dataFullContentReview = ReviewContent[indxReview];
+		if(!dataFullContentReview) return;
+			return (
+			<div className="review__full-content_wrapper">
+				<div ref={reviewFull} className="review__item__full">
+					<button onClick={()=>{removeBtnReview();}} className="review__btn_remove">x</button>
+					<div>
+						<div className="review__item__img">
+								<img src={dataFullContentReview.src}  alt={dataFullContentReview.alt}></img>
+						</div>
+						<div className="review__item__title"><span>{dataFullContentReview.name}</span><span>{dataFullContentReview.date}</span></div>
+					</div>
+					<div>
+						<div className="review__full-content">{dataFullContentReview.fullReview}</div>
+					</div>
+				</div>
+			</div>	
+		)
+	}
+
+	console.dir(getItemReview())
 	return (
 		<div className="page__home">
 			<div className="home__present">
@@ -128,14 +177,40 @@ function Home() {
 			</div>
 			<div className="video_content">
 				<div className="video_content_title">Приглашаем в 3D-тур по «КЕЙ-ДЖЕЙ-ВИ» </div>
-				<button className="video_content_btn" onClick={() => { setNameContent('video');
-setContentAbout('school_tour'); setCreateContent(true); }} ><span>Посмотреть</span><span></span></button>
+				<button className="video_content_btn" onClick={() => { setNameContent('video'); setContentAbout('school_tour'); setCreateContent(true); }} ><span>Посмотреть</span><span></span></button>
 			</div>
 
-			
+			<div className="home__review">
+				<h4 className="home__review__content_title">Отзывы</h4>
+				<div className="review__content_slider">
+					<div className="review__content_wrapper">
+					{btn ? <>{getItemReview()}</> : 
+            	    	<>{ReviewContent.map((item, index) => {
+            	    	    return (
+            	    	        <div key={index} className={`review__item item${index+1}`} >
+									<div>
+										<div className="review__item__img">
+											<img src={item.src}  alt={item.alt}></img>
+										</div>
+										<div className="review__item__title"><span>{item.name}</span><span>{item.date}</span></div>
+									</div>
+									<div>
+										<div className="review__short-content">{item.shortReview}</div>
+										<button onClick={()=>{setFuncBtn(); getFuncIndxReview(index); return;}} className="review__btn">Читать полностью</button>
+									</div>
+								</div>
+            	    	    )
+            	    	})}
+						</>
+						}
+					</div>
+            	</div>
+			</div>
+
 			<div className='page__contacts_iframe home_iframe'>
 				{isLoading && <Preloader/>}
-				<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe></div>
+				{<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe>}
+				</div>
 		</div>
 	);
 }

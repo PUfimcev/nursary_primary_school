@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams } from "react-router-dom";
 
 import Event1 from "../events/event1";
@@ -12,10 +13,12 @@ function Event() {
     const Component = libraryComponents[number - 1] || null;
 
 	return (
-		<div className="page__event">
+		<>
+			<div className="page__event">
 
-            {!Component ? <>Фотографии с наших мероприятий пока обрабатываются и будут выставлены позже.</> : <Component />}
-		</div>
+        	    {!Component ? <>Фотографии с наших мероприятий пока обрабатываются и будут выставлены позже.</> : <Component />}
+			</div>
+		</>
 	);
 }
 

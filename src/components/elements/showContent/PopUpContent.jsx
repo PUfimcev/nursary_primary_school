@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { MainContext } from '../../Main';
 import './style.css';
 
@@ -33,7 +33,6 @@ function PopUpContent() {
 
             whichContent = displayContent.find(item => item.pictureEvent1);
             if (!whichContent) return;
-            console.log(whichContent)
             whichContent = whichContent.pictureEvent1;
             content = whichContent.filter(elem => {
                 return elem.name === contentAbout;
@@ -47,7 +46,6 @@ function PopUpContent() {
 
             whichContent = displayContent.find(item => item.pictureEvent2);
             if (!whichContent) return;
-            console.log(whichContent)
             whichContent = whichContent.pictureEvent2;
             content = whichContent.filter(elem => {
                 return elem.name === contentAbout;

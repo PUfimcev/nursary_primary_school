@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Nav from './Nav';
 import { Link } from "react-router-dom";
 import Logo from '../images/Logo.png';
@@ -8,40 +8,7 @@ import HeaderFormContacts from './elements/headerContactsForm/HeaderFormContacts
 
 function Header() {
 
-    // const {library, setLibrary} = useContext(MainContext);
-    // const refInputName = useRef();
-    // const refInputPhone = useRef();
-
     const [button, setButton] = useState(false);
-    // const [checkPhone, setCheckPhone] = useState(true);
-    // const [inputPhoneFig, setInputPhoneFig] = useState('');
-
-    // useEffect(() => {
-    //     //  let regExp  = /^\+[3][7][5]\ \((29|44|33|25)\)\ [1-9][0-9]{2}\-[0-9]{2}\-[0-9]{2}$/gi;
-    //     // if (regExp.test(inputPhoneFig) === true || inputPhoneFig.length  === 1) {
-    //     //     setCheckPhone(true);
-    //     // } else {
-    //     //     setCheckPhone(false);
-    //     // }
-    
-    //     if (checkPhone === true || inputPhoneFig  === '' || inputPhoneFig.length === 0) {
-    //         setCheckPhone(true);
-    //         setInputPhoneFig('');
-    //     } else {
-    //         setCheckPhone(false);
-    //     }
-    //     console.log(inputPhoneFig)
-    //     console.log(inputPhoneFig.length);
-
-	// }, [inputPhoneFig, checkPhone]);
-    // const [contactID, setContactID] = useState(-1);
-    
-    // function setId(){
-    //     let id = contactID;
-    //     if (id === 1) id = 0;
-    //     id++;
-    //     setContactID(id);
-    // }
 
     function page() {
         const linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);

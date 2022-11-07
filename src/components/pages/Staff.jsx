@@ -1,3 +1,5 @@
+import React, { useRef } from 'react';
+
 // Воспитатели
 import GalinaPetrovna from '../../images/Galina_Petrovna_nursary_teacher.jpg';
 import Hatina_Svetlana from '../../images/Hatina_Svetlana_nursary_teacher.jpg';
@@ -24,7 +26,12 @@ import Volskaya_Irina from '../../images/Volskaya_Irina.jpg';
 import Slavnaya_Tatyana from '../../images/Slavnaya_Tatyana.jpg';
 
 
+
+
 function Staff() {
+
+	const staffList1 = useRef();
+	const staffList2 = useRef();
 
 	const nursaryTeacher = [
 		{name: 'ИВАНОВА ГАЛИНА ПЕТРОВНА', position: 'Воспитатель', img: GalinaPetrovna, alt: 'Воспитатель'},
@@ -50,6 +57,55 @@ function Staff() {
 		{name: 'ВОЛЬСКАЯ ИРИНА ФЕДОРОВНА', position: 'Методист', img: Volskaya_Irina, alt: 'Методист'}, 
 		{name: 'СЛАВНАЯ ТАТЬЯНА ГЕОРГИЕВНА', position: 'Администратор', img: Slavnaya_Tatyana, alt: 'Администратор'}, 
 	];
+
+	// const [shiftSlide1, setShiftSlide1] = useState(0);
+	// const [shiftSlide2, setShiftSlide2] = useState(0);
+	// const [btnShift, setBtnShift] = useState(false);
+	// console.log(shiftSlide1)
+	// // console.log(shiftSlide2)
+	// console.log(btnShift)
+	// // console.log((staffTeachers.length-3)*34);
+	// function slideLeft(data){
+	// 	if(!data) return;
+	// 	if (data === 'list1') {
+	// 		let staffListElem1 = staffList1.current;
+	// 		let shiftTmp = shiftSlide1;
+	// 		shiftTmp += 34*(btnShift === true ? 1 : -1);
+	// 		setShiftSlide1(shiftTmp);
+	// 		// if (shiftSlide1 === 0) {
+	// 		// 	setShiftSlide1(-(staffTeachers.length-3)*34);
+	// 		// } else if (shiftSlide1 === -(staffTeachers.length-3)*34) {
+	// 		// 	setShiftSlide1(0);
+	// 		// }
+
+
+	// 		if (shiftSlide1 >= (staffTeachers.length-3)*34){
+	// 		staffListElem1.style.transform = `translateX(-${shiftSlide1}%)`
+	// 		} else if (shiftSlide1 < (staffTeachers.length-3)*34) {
+	// 			staffListElem1.style.transform = `translateX(0%)`
+	// 		}
+
+	// 		if (btnShift === true && shiftSlide1 === 0) {
+	// 			staffListElem1.style.transform = `translateX(${(staffTeachers.length-3)*34}%)`
+	// 		}
+			
+	// 	} else if (data === 'list2'){
+	// 		let staffListElem2 =staffList2.current;
+	// 		console.log(staffListElem2)
+	// 		let shiftTmp = shiftSlide2;
+	// 		shiftTmp -= 34;
+	// 		setShiftSlide2(shiftTmp);
+	// 		if (shiftSlide2 === 0) {
+	// 			setShiftSlide2((staffOffice.length-3)*34);
+	// 		}
+
+	// 		staffListElem2.style.transform = `translateX(-${shiftSlide2}%)`
+	// 	}
+	// }
+
+
+	
+
 	
 	return (
 		<div className="page__staff">
@@ -71,36 +127,44 @@ function Staff() {
 
 			<div className="staff__teachers">
 				<h3 className="staff__teachers_title">Наши преподаватель</h3>
-				<div className="staff__teachers__wrapper">
-					<div className="staff__list">
-						{staffTeachers.map((item, index) =>{
-							return (
-								<div key={index} className="staff__items">
-									<img src={item.img} alt={item.alt}></img>
-									<span className="staff__name" >{item.name}</span>
-									<span className="staff__position" >{item.position}</span>
-								</div>
-							)
-						})}
+				<div className="staff__slider">
+					<div className="staff__teachers__wrapper">
+						<div ref={staffList1} className="staff__list list1">
+							{staffTeachers.map((item, index) =>{
+								return (
+									<div key={index} className="staff__items">
+										<img src={item.img} alt={item.alt}></img>
+										<span className="staff__name" >{item.name}</span>
+										<span className="staff__position" >{item.position}</span>
+									</div>
+								)
+							})}
+						</div>
 					</div>
+					{/* <button className='slider__btn-left' onClick={()=>{slideLeft('list1'); setBtnShift(false);}}><span>&lt;</span></button>
+					<button className='slider__btn-right' onClick={()=>{slideLeft('list1'); setBtnShift(true);}}><span>&gt;</span></button> */}
 				</div>
 			</div>
 
 
 			<div className="staff__office">
 				<h3 className="staff__office_title">Наша администрация</h3>
-				<div className="staff__teachers__wrapper">
-					<div className="staff__list">
-						{staffOffice.map((item, index) =>{
-							return (
-								<div key={index} className="staff__items">
-									<img src={item.img} alt={item.alt}></img>
-									<span className="staff__name" >{item.name}</span>
-									<span className="staff__position" >{item.position}</span>
-								</div>
-							)
-						})}
+				<div className="staff__slider">
+					<div className="staff__teachers__wrapper">
+						<div ref={staffList2} className="staff__list list2">
+							{staffOffice.map((item, index) =>{
+								return (
+									<div key={index} className="staff__items">
+										<img src={item.img} alt={item.alt}></img>
+										<span className="staff__name" >{item.name}</span>
+										<span className="staff__position" >{item.position}</span>
+									</div>
+								)
+							})}
+						</div>
 					</div>
+					{/* <button className='slider__btn-left' onClick={()=>{slideLeft('list2'); setBtnShift(false);}}><span>&lt;</span></button>
+					<button className='slider__btn-right' onClick={()=>{slideLeft('list2'); setBtnShift(true);}}><span>&gt;</span></button> */}
 				</div>
 			</div>
 		</div>

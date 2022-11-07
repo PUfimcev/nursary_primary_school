@@ -1,6 +1,6 @@
 import ContactForm from '../elements/contactsForm/ContactForm';
 import GoogleMap from '../../images/map_preloder.png'; 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function Contacts() {
 
@@ -9,6 +9,7 @@ function Contacts() {
 	function handleOnLoad() {
 		setLoading(false);
 	}
+	console.log(isLoading)
 
 	function Preloader(){
 		return (
@@ -16,6 +17,7 @@ function Contacts() {
 		)	
 	}
 	
+
 	return (
 		<div className="page__contacts">
 			<p className="page__name">KJV / Контакты</p>
@@ -34,8 +36,9 @@ function Contacts() {
 				<ContactForm />
 			</div>
 			<div className='page__contacts_iframe'>
-				{isLoading && <Preloader/>}
-				<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe></div>
+				{isLoading && <Preloader onClick={handleOnLoad} />}
+				<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe>
+				</div>
 		</div>
 	);
 }

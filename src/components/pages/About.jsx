@@ -1,3 +1,4 @@
+import React from 'react';
 import KidsInClass from '../../images/Kids_in_Class.png';
 
 function About() {
