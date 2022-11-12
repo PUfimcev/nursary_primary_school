@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { MainContext } from '../../Main';
 import './style.css';
+import './media.css';
 
 function PopUpContent() {
 
@@ -62,7 +63,7 @@ function PopUpContent() {
 			<div className="show__content" onClick={removeContent}>
                 <div className="show__content__wrapper">
                     <ShowContent  />
-                    <button className="show__content_btn-remove" onClick={removeContent} >x</button>
+                    <button className="show__content_btn-remove" onClick={removeContent} ></button>
 
                 </div>
             </div>

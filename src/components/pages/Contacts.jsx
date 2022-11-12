@@ -9,7 +9,6 @@ function Contacts() {
 	function handleOnLoad() {
 		setLoading(false);
 	}
-	console.log(isLoading)
 
 	function Preloader(){
 		return (

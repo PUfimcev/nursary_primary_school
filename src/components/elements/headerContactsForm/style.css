@@ -2,7 +2,7 @@
     min-width: 550px;
     min-height: 250px;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 100%);
@@ -21,28 +21,26 @@
 }
 
 .form__btn__remove {
+    background-image: url('../../../images/cross_remove.png');
+    background-position: center;
+    background-repeat: no-repeat;
     display: inline-block;
     align-self: flex-end;
-    margin: 10px 20px 0 0;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
     border: none;
     background-color: transparent;
     border-radius: 50%;
     overflow: hidden;
-}
-
-.form__btn__remove > span {
-    display: block;
-    transform: rotate(45deg);
-    font-size: 40px;
-    line-height: 40px;
-    border-radius: 50%;
+    padding: 30px;
+    transition: transform 1s ease-in-out;
 }
 
 .form__btn__remove:hover {
     background-color: rgb(229, 224, 224);
+}
+.form__btn__remove:active {
+    background-color: rgb(143, 138, 138);
+    animation: timeout 0.5s ease-in-out 0.1s 1 forwards;
 }
 
 .form__items {

@@ -1,32 +1,29 @@
 import React, { useContext, useState, useEffect,  useRef } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from '../Main';
+import { DataContacts } from '../../App';
 import Girl from '../../images/Girl.png';
 import Boy from '../../images/Boy.png';
 import GirlBoyBalls from '../../images/GirlBoyBalls.png';
 import GoogleMap from '../../images/map_preloder.png'; 
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Mousewheel } from "swiper";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
+
+
 function Home() {
 	const { setCreateContent, setNameContent, setContentAbout, ReviewContent } = useContext(MainContext);
+	const { setHomeActive,  setAboutActive, setNursaryActive,  setSchoolActive, setPricesActive,  setContactsActive, screenWidth  } = useContext(DataContacts);
 
 	const [isLoading, setLoading] = useState(true);
 	const [btn, setBtn] = useState(false);
-	const [indxReview, getIndxReview] = useState(0);
+	const [indxReview, setIndxReview] = useState(0);
 
 	const reviewFull = useRef();
-
-	function page(data) {
-        const linkPage = document.querySelector(`.nav__link.${data}`);
-		if (!linkPage) return;
-
-		const linkPages = document.querySelectorAll('.nav__link');
-        if (!linkPages) return;
-        
-        linkPages.forEach(elem => {
-            elem.classList.remove('active');
-        });
-        linkPage.classList.add('active');
-    }
+	const refSlider = useRef();
 
 	function pageTop(){
         let mainElem = document.querySelector('.main__content');
@@ -47,9 +44,7 @@ function Home() {
 		let reviewFullElem = reviewFull.current;
 
 		reviewFullElem.style.animation = 'timeout 1s ease-in-out 1 forwards';
-		setTimeout(()=>{setBtn(false);}, 1000);
-		
-        
+		setTimeout(()=>{setBtn(false);setIndxReview(0)}, 1000);
     }
 
 	function setFuncBtn(){
@@ -58,7 +53,7 @@ function Home() {
 	}
 
 	function getFuncIndxReview(data){
-		getIndxReview(data);
+		setIndxReview(data);
 		return;
 	}
 
@@ -72,7 +67,7 @@ function Home() {
 			return (
 			<div className="review__full-content_wrapper">
 				<div ref={reviewFull} className="review__item__full">
-					<button onClick={()=>{removeBtnReview();}} className="review__btn_remove">x</button>
+					<button onClick={()=>{removeBtnReview();}}className="review__btn_remove"></button>
 					<div>
 						<div className="review__item__img">
 								<img src={dataFullContentReview.src}  alt={dataFullContentReview.alt}></img>
@@ -87,14 +82,33 @@ function Home() {
 		)
 	}
 
-	console.dir(getItemReview())
+	// function slidePrevNext (data){
+	// 	let slider = refSlider.current;
+	// 	let x = slider.style.transform;
+    //     if (!x) {
+    //         x = 0;
+    //     } else {
+    //         x = x.replace('translateX(', '');
+    //         x = x.replace('%)', '');
+    //         x = Math.abs(x);
+    //     }
+
+    //     x += 25 * (data === 'left' ? -1 : 1);
+    //     const stopPoint = (ReviewContent.length-2)*25;
+	// 	if (x <= stopPoint) slider.style.transform = `translateX(-${x}%)`;
+	// 	if (x > stopPoint)  slider.style.transform = `translateX(0%)`;
+        
+    //     if (x < 0)  slider.style.transform = `translateX(-${stopPoint}%)`;
+    // };
+
+	
 	return (
 		<div className="page__home">
 			<div className="home__present">
 				<div className="home__present__content">
 					<h1 className="home__present__content_title">детский сад — начальная школа «Кей-ДЖЕЙ-Ви»</h1>
 					<p className="home__present__content_description">Мы работаем уже более 30 лет! Мы постоянно совершенствуемся, чтобы создавать лучшие условия для творческого и интеллектуального развития учеников.</p>
-					<Link onClick={() => {page('about'); pageTop();}} className="link__inDetails" to="/about/about/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+					<Link onClick={()=>{setHomeActive(false); setAboutActive(true); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} className="link__inDetails" to="/about/about/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 				</div>
 				<div className="home__present__content_photos">
 					<div className="home__present__content_curcle1"></div>
@@ -134,7 +148,7 @@ function Home() {
 						<li>Cтаршая (5-6 лет)</li>
 					</ul></div>
 					<div className="home__nursary__link" >
-						<span className="home__nursary__link_price">от 330 $ в месяц</span><Link onClick={() => {page('nursary'); pageTop();}} className="link__inDetails" to="/nursary/junior/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__nursary__link_price">от 330 $ в месяц</span><Link onClick={() => {setHomeActive(false); setAboutActive(false); setNursaryActive(true); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} className="link__inDetails" to="/nursary/junior/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 			</div>
@@ -142,7 +156,7 @@ function Home() {
 				<div className="home__preparatory__photo">
 					<div className="home__preparatory__kids_photo"><span>Мы предлагаем Вам отдать своих детей в подготовительный класс школы «Кей-Джей-Ви», где Дети будут заниматься по отдельной программе.</span></div>
 					<div className="home__preparatory__link" >
-						<span className="home__preparatory__link_price">от 372 $ в месяц</span><Link onClick={() => {page('school'); pageTop();}} className="link__inDetails" to="/school/preparatory/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__preparatory__link_price">от 372 $ в месяц</span><Link onClick={() => {setHomeActive(false); setAboutActive(false); setNursaryActive(false); setSchoolActive(true); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} className="link__inDetails" to="/school/preparatory/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 				<div className="home__preparatory__content">
@@ -171,7 +185,7 @@ function Home() {
 				<div className="home__primary__photo">
 					<div className="home__primary__kids_photo"><span>Обучение с 1 по 4 классы, включая пребывание в группах продленного дня</span></div>
 					<div className="home__primary__link" >
-						<span className="home__primary__link_price">от 470 $ в месяц</span><Link onClick={() => {page('school'); pageTop();}} className="link__inDetails" to="/school/primary/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+						<span className="home__primary__link_price">от 470 $ в месяц</span><Link onClick={() => {setHomeActive(false); setAboutActive(false); setNursaryActive(false); setSchoolActive(true); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} className="link__inDetails" to="/school/primary/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
 					</div>
 				</div>
 			</div>
@@ -182,31 +196,49 @@ function Home() {
 
 			<div className="home__review">
 				<h4 className="home__review__content_title">Отзывы</h4>
-				<div className="review__content_slider">
-					<div className="review__content_wrapper">
-					{btn ? <>{getItemReview()}</> : 
-            	    	<>{ReviewContent.map((item, index) => {
-            	    	    return (
-            	    	        <div key={index} className={`review__item item${index+1}`} >
-									<div>
-										<div className="review__item__img">
-											<img src={item.src}  alt={item.alt}></img>
+				{btn && <>{getItemReview()}</> }
+				<div  className="review__content_slider">
+					<div ref={refSlider} className="review__content_wrapper">
+					<Swiper
+        				slidesPerView={screenWidth > 425 ? 2 : 1}
+        				spaceBetween={10}
+        				loop={true}
+        				loopFillGroupWithBlank={true}
+        				pagination={{
+        				//   clickable: true,
+						  type: "fraction",
+        				}}
+        				navigation={true}
+        				modules={[Pagination, Navigation, Mousewheel]}
+						mousewheel={true}
+						keyboard={true}
+						longSwipesMs={1000}
+        				className="mySwiper"
+      >
+					{ <>{ReviewContent.map((item, index) => {
+            	    		    return (
+            	    		        <SwiperSlide key={index}><div   className={`review__item item${index+1}`} >
+										<div>
+											<div className="review__item__img">
+												<img src={item.src}  alt={item.alt}></img>
+											</div>
+											<div className="review__item__title"><span>{item.name}</span><span>{item.date}</span></div>
 										</div>
-										<div className="review__item__title"><span>{item.name}</span><span>{item.date}</span></div>
+										<div>
+											<div className="review__short-content">{item.shortReview}</div>
+											<button onClick={()=>{setFuncBtn(); getFuncIndxReview(index); }} className="review__btn">Читать полностью</button>
+										</div>
 									</div>
-									<div>
-										<div className="review__short-content">{item.shortReview}</div>
-										<button onClick={()=>{setFuncBtn(); getFuncIndxReview(index); return;}} className="review__btn">Читать полностью</button>
-									</div>
-								</div>
-            	    	    )
-            	    	})}
-						</>
+									</SwiperSlide>
+            	    		    )
+            	    		})}</>
 						}
+					</Swiper>
 					</div>
             	</div>
+					{/* {isBtnShift && <button className='slider__btn-left' onClick={()=>{ slidePrevNext('left');}}><span>&lt;</span></button>}
+					{isBtnShift && <button className='slider__btn-right' onClick={()=>{ slidePrevNext();}}><span>&gt;</span></button>} */}
 			</div>
-
 			<div className='page__contacts_iframe home_iframe'>
 				{isLoading && <Preloader/>}
 				{<iframe title='Адрес на карте' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.951570951808!2d27.587888115966827!3d53.950367980110066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf5cad0687f9%3A0x67db471bff3c1228!2z0YPQuy4g0J3QuNC60LjRgtC40L3QsCAzNSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1666895836881!5m2!1sru!2sby" onLoad={handleOnLoad}></iframe>}

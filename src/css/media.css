@@ -1,0 +1,651 @@
+@media (max-width: 1024px) {
+
+    .container {
+        width: 100%;
+    }
+    /* Header */
+    .header__btn {
+        margin-left: 0;
+    }
+
+    .header__content, .footer__content {
+        width: 100%;
+        padding-left:  30px;
+        padding-right:  30px;
+    }
+
+
+    /* main */
+
+
+    .page__home, .page__about, .page__events, .page__event, .page__staff, .page__nursery, .page__preparatory, .page__primary, .page__prices, .page__contacts {
+
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* home */
+
+
+    .home__present__content_photos div:nth-child(-n+3) {
+        width: 150px;
+        height: 150px;
+    }
+
+    .home__present__content_photos div:nth-child(4) > img {
+        width: 110%;
+    }
+    .home__present__content_photos div:nth-child(5) > img {
+        width: 90%;
+    }
+    .home__present__content_photos div:nth-child(6) > img {
+        width: 80%;
+    }
+
+    .home__present__content_photos2 {
+        
+        right: 0%;
+    }
+    
+    .home__present__content_photos3 {
+        right: 20%;
+    }
+    
+    .home__advantages ul {
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 40px;
+ 
+    }
+
+    .advantages__items {
+        width: 45%;
+        padding: 10px 25px;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .home__nursary, .home__preparatory, .home__primary {
+        width: 100%;
+        gap: 5%;
+    }
+
+    .home__nursary__content, .home__primary__content, .home__preparatory__content {
+        width: 45%;
+    }
+    .home__nursary__photo, .home__primary__photo, .home__preparatory__photo, .events__item {
+        width: 50%;
+    }
+    
+    .review__item__img {
+        width: 190px;
+        height: 190px;
+    }
+
+    /* About */
+    .about__content > div {
+        gap: 20px;
+    }
+
+    .about_photo {
+        
+        height: 250px;
+    }
+
+    /* Staff */
+    .staff__office {
+        margin-bottom: 0;
+    }
+
+    .staff__name, .staff__position {
+        width: 90%;
+    }
+
+    /* events */
+
+    .events__list {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* nursery */
+    .nursery__content {
+        gap: 20px;
+    }
+
+    .content_photo {
+        width: 70%;
+    }
+
+    .preparatory__prices__list  .prices__list__item, .nursery__prices__list .prices__list__item{
+        width: 32%;
+        padding: 30px;
+        justify-content: space-around;
+    }
+
+
+    /* Primary */
+    .page__primary {
+        gap: 50px;
+    }
+
+    .page__primary>ul, .page__nursery>ul {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .primary__schedule {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .schedule_parts {
+        width: 30%;
+    }
+    .schedule_parts.part4 {
+        width: 50%;
+    }
+
+    .prices__list__item{
+        padding: 50px;
+    }
+
+    /* prices */
+
+    .page__prices__nursary,.page__prices_preparatory {
+        gap: 50px;
+    }
+
+    .prices__primary_title {
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* general */
+
+    /* Forms to apply */
+
+    .item_title {
+        font-size: 16px;
+        text-align: center;
+    }
+    .preparatory__prices__list  .prices__list__item, .nursery__prices__list .prices__list__item{
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .item__btn{
+        padding: 10px 25px;
+    }
+
+    /* Header */
+
+    .header__phone {
+        margin-left: auto;
+        margin-right: 70px;
+    }
+
+
+    /* home */
+
+    .page__home {
+        margin-top: 90px;
+    }
+
+    .home__present__content_photos div:nth-child(4) > img {
+        width: 120%;
+    }
+    .home__present__content_photos div:nth-child(5) > img {
+        width: 70%;
+    }
+    .home__present__content_photos div:nth-child(6) > img {
+        width: 70%;
+    }
+
+    .home__present__content_photos2 {
+        right: -30%;
+    }
+    
+    .home__present__content_photos3 {
+        right: 0%;
+    } 
+    
+    .home__advantages ul {
+        width: 100%;
+    }
+
+    .advantages__items {
+        width: 45%;
+    }
+
+    .home__nursary__babies_photo, .home__primary__kids_photo, .home__preparatory__kids_photo, .events__item__photo {
+        width: 350px;
+        height: 250px;
+    }
+    
+    .home__nursary__babies_photo ul, .home__primary__kids_photo span, .home__preparatory__kids_photo span, .events__item_title {
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .video_content {
+        height: 250px;
+    }
+
+    .home__review {
+        margin-top: 80px;
+        margin-bottom: 0;
+    }
+
+    .review__full-content {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .review__item {
+        
+        height: 250px;
+        padding: 0 15px; 
+        gap: 15px;
+    }
+
+    .review__item__img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .review__item__title {
+        width: 95%;
+    }
+
+    .review__item div:last-child {
+        height: 75%;
+    }
+
+    .swiper-button-prev {
+        left: 0 !important;
+    }
+    .swiper-button-next{
+        
+        right: 0 !important;
+    }
+
+ 
+    .page__contacts_iframe {
+        margin-top: 0;
+    }
+
+    /* about */
+
+    .about__content {
+        gap: 35px;
+    }
+
+    .about__description {
+        width: 90%;
+    }
+
+    .about_photo {
+        height: 200px;
+    }
+
+    .about__content > div .about__description{
+        width: 50%;
+    }
+
+    /* Staff */
+
+    .staff__items {
+        padding-bottom: 0;
+        height: 340px;
+
+    }
+    .staff__items> img {
+        width: 80%;
+    }
+
+    /* events */
+
+    .page__events {
+        padding-bottom: 30px;
+    }
+
+    .events__list {
+        flex-direction: column;
+        gap: 40px;
+
+    }
+
+    .events__item {
+        width: 70%;
+    }
+
+
+    .events__item__photo {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+   /* Nursery */
+
+   .content_photo {
+    width: 130%;
+    height: 250px;
+    }
+
+    .nursery__content {
+    align-items: center;
+    margin-bottom: 80px;
+    }   
+
+    /* preparatory */
+
+    .preparatory__content_title {
+        margin-bottom: 30px;
+    }
+
+    /* primary */
+
+    .primary__schedule {
+        flex-wrap: wrap;
+        margin-top: 50px;
+        gap: 30px;
+    }
+
+    .schedule_parts {
+        width: 45%;
+    }
+
+    /* prices */
+
+    .page__prices__nursary {
+        gap: 0px;
+    }
+
+    .page__prices_preparatory{
+        gap: 10px;
+    }
+
+    .prices__primary_title {
+        padding-left: 20px;
+    }
+
+    .prices__nursary_title {
+        width: 40%;
+    }
+    
+    .prices__nursary_list {
+        gap: 50px;
+    }
+
+    .preparatory_photo {
+        width: 280px;
+    }  
+
+    /* contacts */
+
+    .contacts__content_title {
+        margin-top: -100px;
+    }
+
+    .page__contacts__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 70px;
+    }
+}
+
+
+
+
+@media (max-width: 425px) {
+
+    /* general */
+
+    h3, h4 {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align:center;
+    }
+
+    h3 {
+        width: 85%;
+    }
+
+    /* about */
+
+    .about__description {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .about__content  div {
+       flex-direction: column;
+    }
+
+    .about__content > div .about__description{
+        width: 90%;
+    }
+
+    .about_photo {
+        
+        width: 90%;
+        height: 250px;
+    }
+
+    /* Staff */
+
+    .staff__list {
+        flex-direction: column;
+    }
+
+    .staff__items {
+        width: 90%;
+    }
+
+    /* events */
+
+    .page__event .page__name {
+        margin-bottom: 30px;
+    }
+    .page__events_title {
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    .events__item {
+        width: 100%;
+    }
+
+
+     /* Nursery */
+
+    .nursery__content {
+        flex-direction: column;
+    }
+
+   .content_photo {
+    width: 130%;
+    height: 250px;
+    }
+
+    .nursery__prices__list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nursery__prices__list  .prices__list__item {
+        width: 90%;
+    }
+
+    .nursery__prices__list .prices__list__item .item_title {
+        font-size: 20px;
+    }
+
+ 
+
+    /* Praparatory */
+
+    .preparatory__title {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .preparatory__content {
+        width: 100%;
+    }
+
+    .content_photo {
+        width: 100%;
+    }
+
+    .preparatory__schedule {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .preparatory__schedule_item {
+        width: 100%;
+    }
+
+    .preparatory__prices__list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .preparatory__prices__list  .prices__list__item {
+        width: 90%;
+    }
+
+    .preparatory__prices__list .prices__list__item .item_title {
+        font-size: 20px;
+    }
+
+    /*  Primary  */
+
+    .page__primary {
+        gap: 20;
+    }
+
+    .page__primary .page__name {
+        margin-bottom: 20px;
+    }
+
+    .primary__schedule {
+        flex-direction: column;
+    }
+
+    .schedule_parts{
+        width: 100%;
+    }
+
+    .schedule_parts.part4 {
+        width: 100%;
+    }
+
+    .schedule_part_img {
+        width: 360px;
+        height: 360px;
+        margin: 0 auto;
+    }
+
+    .schedule_parts.part2  .schedule_part_img, .schedule_parts.part4  .schedule_part_img {
+        display: none;
+    }
+
+    .primary__prices__list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .primary__prices__list .prices__list__item {
+        width: 90%;
+    }
+
+    .primary__prices__list .prices__list__item .item_title {
+        font-size: 20px;
+    }
+
+
+     /* prices */
+    .page__prices {
+        gap: 25px;
+    }
+
+    .page__prices__nursary, .page__prices_preparatory, .page__prices_primary{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .page__prices_preparatory {
+        margin: 0;
+    }
+
+    .nursary_title, .preparatory_title, .primary_title  {
+        margin-bottom: 20px;
+    }
+
+    .prices__nursary_title  {
+        width: 95%;
+        margin-top: -50px;
+        margin-bottom: 20px;
+    }
+
+    .prices__nursary_list{
+        gap: 20px;
+    }
+    .prices__nursary_list > div {
+        width: 120%;
+    }
+
+    .prices__preparatory_title {
+        width: 120%;
+    }
+
+    .preparatory_photo {
+        width: 100%;
+    }
+
+    .prices__primary_title {
+        padding-left: 0;
+
+    }
+
+      /* contacts */
+
+    .page__contacts__content, .contacts__content_pointer {
+        width: 100%;
+    }
+
+    .contacts__content_pointer{
+        min-width: 0;
+    }
+
+    .page__contacts_form {
+        width: 0;
+    }
+
+    /* footer */
+
+    .footer__content {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 25px;
+        padding: 50px 0;
+    }
+
+
+}

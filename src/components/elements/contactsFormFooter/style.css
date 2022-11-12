@@ -1,6 +1,6 @@
 .footer__page__contacts_form {
-    min-width: 400px;
-    min-height: 250px;
+    width: 400px;
+    height: 250px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,10 @@
     padding: 5px;
     border: 0;
     border-bottom: 1px solid #FFFAFE;
+}
+
+.footer__form__items input:focus {
+    background-color: #fff;
 }
 
 .footer__form__items input:nth-child(4) {

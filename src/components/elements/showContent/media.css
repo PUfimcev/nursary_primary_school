@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+
+    .show__content__elem {
+        width: 60vh;
+        min-width: 400px;
+        min-height: 215px;
+    }
+
+    .show__content_btn-remove{
+        padding: 20px;
+    }
+
+}
+@media (max-width: 425px) {
+
+    .show__content__elem {
+        width: 55vh;    
+    }
+
+    .show__content_btn-remove{
+        display: none;
+    }
+
+}

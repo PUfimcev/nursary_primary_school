@@ -1,0 +1,12 @@
+
+@media (max-width: 425px) {
+
+    .footer__nav {
+        width: 70%;
+    }
+
+    .footer__nav>ul li.hover ul{
+        gap: 20px;
+    }
+
+}

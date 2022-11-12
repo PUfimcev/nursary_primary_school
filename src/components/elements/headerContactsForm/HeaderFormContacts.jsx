@@ -1,6 +1,8 @@
 import React, { useContext, useRef, useState } from 'react';
 import { DataContacts } from '../../../App'; 
+import InputMask from 'react-input-mask';
 import './style.css';
+import './media.css';
 
 
 function HeaderFormContacts(props) {
@@ -36,40 +38,28 @@ function HeaderFormContacts(props) {
         return;
     }
 
+
     function InputKey() {
 
         let inputValue = refInputPhone.current.value;
-        // eslint-disable-next-line no-useless-escape
-        if (inputValue.match(/[^+0-9\s\(\)-]/gi)) inputValue = inputValue.replace(/[^+0-9\s\(\)-]/gi, '');
-
-        refInputPhone.current.value = inputValue; 
-        if (refInputPhone.current.value === '') {
-            setToolTip(true);
-        }
-        checkPhone(refInputPhone.current.value);       
-    }
-
-    function checkPhone(data) {
-        if (!data) return;
-
-        const regexp = /^\+375\s\((29|44|33|17|25)\)\s[1-9][0-9]{2}-[0-9]{2}-[0-9]{2}/gi;
-
-        if (data.length === 19 && regexp.test(data) === true) { 
-            setToolTip(true);
-        }   else if (data.length === 19 && regexp.test(data) === false){
-            setToolTip(false);
-        }
+        const regexp = /^\+375\s\(_?_?(([2]?_?[9]?)|([4]?_?[4]?)|([3]?_?[3]?)|([1]?_?[7]?)|[2]?_?[5]?)?\)\s_?_?_?[1-9]?_?[0-9]?_?[0-9]?-_?_?[0-9]?_?[0-9]?-_?_?[0-9]?_?[0-9]?/gi;
         
-        if (data.length < 19) {
-            setToolTip(true);
+        if (inputValue.length === 19) {
+            
+            if (regexp.test(inputValue) === true) { 
+                setToolTip(true);
+            }   else{
+                setToolTip(false);
+            }
         }
     }
+    
 
     function popupIncorrectPhone() {
         return (
             <>
                 <div className='input__phone-incorrect'>
-                Неверно введен номер телефона. Введите по шаблону.
+                Неверно введен номер телефона.
                 </div>
             </>
         )
@@ -79,13 +69,18 @@ function HeaderFormContacts(props) {
         <>
             <div className="form__content">
                  
-                <button className="form__btn__remove" onClick={removeForm}><span>+</span>
+                <button className="form__btn__remove" onClick={()=>{ removeForm();}}>
                 </button>
                 <form className="form__getData" action="#" method="post" onSubmit={handleSubmit}>
                     <div className="form__items">
                         <input ref={refInputName} type="text" name='name' maxLength={20} required aria-autocomplete='inline'/>
                         <label htmlFor="name" >Ваше имя</label>
-                        <input ref={refInputPhone} type="tel" name='phone' required  maxLength="19" placeholder='+375 (11) 111-11-11' aria-autocomplete='inline' onInput={InputKey}/>
+
+                    <InputMask 
+                            mask='+375 (99) 999-99-99' ref={refInputPhone} type="tel" name='phone' required placeholder='+375 (11) 111-11-11' aria-autocomplete='inline' onChange={InputKey}>
+
+                        </InputMask>
+
                         {toolTip === false && <><div className="header__form_incorrPhone">{popupIncorrectPhone()}</div></>}
                         <label htmlFor="phone" >Ваш телефон</label>
                         <button className="form__btn" type='submit'>Отправить</button>

@@ -14,6 +14,16 @@ font-family: 'Raleway', sans-serif; */
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+@keyframes toleft {
+    from { transform: translateX(100%) }
+    to { transform: translateX(0%) }
+}
+
+@keyframes toright {
+    from { transform: translateX(0) }
+    to { transform: translateX(100%) }
+}
         /* General propertis */
 
 * {
@@ -25,6 +35,7 @@ font-family: 'Raleway', sans-serif; */
 html, body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    /* overflow-x: hidden; */
 }
 
 .header, .main, .footer {
@@ -88,9 +99,8 @@ li {
         /* Forms to apply */
 
 .prices__list__item {
-    min-width: 360px;
-    min-height: 290px;
-    width: 30%;
+    height: 290px;
+    width: 32%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,7 +157,7 @@ li {
 .page__offeres {
     display: block;
     width: 160px;
-    height: 180px;
+    height: 190px;
     background: #FFFAFA;
     border: 1px solid #1F2E19;
     border-radius: 30px;
@@ -181,10 +191,10 @@ li {
         /* Photos on the pages of school and nursery */
 
 .content_photo {
+    
     position: relative;
-    width: 20%;
-    min-width: 550px;
-    min-height: 340px;
+    width: 540px;
+    height: 350px;
     border-radius: 30px; 
 }
 
@@ -193,7 +203,7 @@ li {
     width: 100%;
     top: 0;
     left: 0;
-    object-fit: contain;
+    
 }
 
         /* Header */
@@ -203,7 +213,7 @@ li {
     top: 0;
     left: 50%;
     transform: translate(-50%,0);
-    z-index: 1;
+    z-index: 20;
 }
 
 .header__content {
@@ -214,7 +224,7 @@ li {
     font-size: 15px;
     line-height: 18px;
     background-color: #F6FCF4; 
-    height: 8vh;
+    height: 80px;
     padding: 0 25px;
 }
 
@@ -291,18 +301,27 @@ li {
     color: #7BC461; 
 } 
 
+.burger {
+    background-image: url('../images/burger.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    border: 0;
+    background-color: #F6FCF4;
+    cursor: pointer;
+
+}
         /* Main */
 
 .main__content {
     
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
-    overflow-x: visible;
-    padding-top: 80px;
+    overflow: hidden;
+    padding-top: 100px;
     padding-bottom: 100px;
-    
 }
+
 
     /* Home */
 .page__home {
@@ -441,6 +460,7 @@ li {
 }
 
 .home__advantages ul {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -454,7 +474,7 @@ li {
 
 .advantages__items {
     font-size: 14px;
-    flex: 1 1;
+    width: 25%;
     margin-left: 0;
     background-color: #ffff;
     padding: 5px;
@@ -528,8 +548,7 @@ li {
 }
 
 .home__nursary__content, .home__primary__content, .home__preparatory__content {
-    width: 55%;
-    min-width: 600px;
+    width: 50%;
 }
 
 .home__nursary__content_description, .home__primary__content_description, .home__preparatory__content_description {
@@ -547,8 +566,8 @@ li {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-width: 450px;
-    min-height: 350px;
+    width: 450px;
+    height: 350px;
     border-radius: 20px;
     margin-bottom: 40px;
     overflow: hidden;
@@ -606,10 +625,9 @@ li {
 }
 
 .video_content {
-    width: 70%;
-    height: auto;
-    min-width: 900px;
-    min-height: 300px;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
     background-image: url('../images/poster_video.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -658,23 +676,19 @@ li {
 }
 
 .home__review {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 100px 0;
+    position: relative;
 }
+
 
 .review__content_slider {
     width: 100%;
-}
-
-.review__content_wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    /* overflow: hidden; */
-    gap: 30px;
-}
+    height: 350px;
+} 
 
 .review__item__title, .review__short-content {
     font-weight: 600;
@@ -683,17 +697,16 @@ li {
     color: #1F2E19;
 }
 
+
 .review__item {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 30px;
-    width: 50%;
-    min-width: 560px;
-    min-height: 330px;
+    gap: 25px;
+    height: 330px;
     border: 1px solid #1F2E19;
     border-radius: 20px;   
-    padding: 0 40px; 
+    padding: 0 35px; 
 }
 
 .review__item div:first-child, .review__item__full div:nth-child(2){
@@ -702,12 +715,11 @@ li {
     gap: 10px;
 }
 
-.review__item>div:last-child {
+.review__item div:last-child {
     height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
 }
 
 .review__item__img {
@@ -719,6 +731,8 @@ li {
 }
 
 .review__item__img>img{
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -733,7 +747,7 @@ li {
 }
 
 .review__btn {
-    width: 70%;
+    width: 90%;
     margin-left: 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -744,6 +758,9 @@ li {
     justify-content: center;
 }
 .review__item__full {
+    background-color: #e2f6db;
+    position: absolute;
+    z-index: 15;
     opacity: 0;
     animation: opacity 1s ease-in-out 0.1s 1 forwards;
     width: 60%;
@@ -752,21 +769,25 @@ li {
     align-items: center;
     border: 1px solid #1F2E19;
     border-radius: 20px;    
-    
+}
+
+.review__item__full div:last-child div{
+    height: 200px;
+    overflow-y: scroll;
 }
 
 .review__btn_remove {
-    font-size: 30px;
+    background-image: url('../images/cross_remove.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
     align-self: flex-end;
-    margin: 10px 20px 0 0;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
     border: none;
     background-color: transparent;
     border-radius: 50%;
     overflow: hidden;
-
+    padding: 30px;
 }
 
 .review__btn_remove:hover {
@@ -777,9 +798,9 @@ li {
     width: 75%;
     margin: 40px auto;
     white-space: pre-line;
-
-
 }
+
+
     /* About */
 
 .about__content {
@@ -804,11 +825,11 @@ li {
 
 }
 
-.about__content > div {
+.about__content  div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-self: flex-start;
+    gap: 20px;
 }
 
 .about__content > div .about__description{
@@ -817,9 +838,8 @@ li {
 
 .about_photo {
     position: relative;
-    width: 20%;
-    min-width: 550px;
-    min-height: 360px;
+    width: 50%;
+    height: 350px;
     border-radius: 30px; 
 }
 
@@ -858,22 +878,45 @@ li {
     
 }
 
+.staff__list.list2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;    
+}
+
 .staff__items {
-    min-width: 360px;
-    min-height: 360px;
+    width: 30%;
+    height: 360px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: transparent;
     border: 1px solid #1F2E19;
     border-radius: 30px;
+    padding: 15px 0;
+}
+
+.staff__items>div{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.staff__teachers .staff__items, .staff__office .staff__items{
+    width: 100%;
 }
 
 .staff__items> img {
+    width: 70%;
     max-width: 215px;
     border-radius: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .staff__name, .staff__position {
@@ -890,43 +933,31 @@ li {
     width: 75%;
 }
 
-/* .staff__slider {
-    width: 100%;
-    position: relative;
+.swiper-wrapper {
+    margin-bottom: 40px;
 }
 
-.slider__btn-left, .slider__btn-right {
-    position: absolute;
-    z-index: 10;
-    font-size: 25px;
-    width: 60px;
-    height: 100%;
-    cursor: pointer;
-    border: 0;
+.swiper-button-prev, .swiper-button-next {
     opacity: 0.5;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    color: #1F2E19 !important;
+    top: 45% !important;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2))
 }
 
-.slider__btn-left>span, .slider__btn-right>span{
-    text-align: center;
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    opacity: 1;
 }
-
-.slider__btn-left {
-    border-radius: 30px 0 0 30px;
-    left: 25px;
-}
-
-.slider__btn-right {
-    border-radius: 0 30px 30px 0;
-    right: -22px;
-}
-
-.slider__btn-left:hover, .slider__btn-right:hover {
-    opacity: 0.9;
-} */
 
     /* Nursery */
+.nursery__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 140px;
+    gap: 30px;
+}
 
 .nursery__content_title {
     width: 100%;
@@ -936,24 +967,18 @@ li {
 .page__nursery>ul {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     gap: 30px;
     margin-bottom: 100px;
 }
 
+
 .page__nursery>ul li{
-    flex: 1 1;
+    width: 160px;
 }
 
-.nursery__content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 140px;
-}
 
 .nursery__prices__list {
     list-style: none;
@@ -987,11 +1012,13 @@ li {
     background-image: url('../images/heroicons_paint_brush.png');
 }
 
+
+
     /* Events */
 
 .page__events {
     width: 100%;
-    height: 80vh;
+    padding-bottom: 170px;
 }
 
 .events__list {
@@ -1004,15 +1031,14 @@ li {
     margin-bottom: 20px;
 }
 
+
 .events__item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.events__item__photo{
-    width: 100%;
-}
+
 
 .events__item__link .link__inDetails {
     display: block;
@@ -1046,8 +1072,12 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     margin-bottom: 70px;
+}
+
+.preparatory__content {
+    width: 50%;
 }
 
 .preparatory__schedule {
@@ -1085,14 +1115,14 @@ li {
 .page__primary>ul {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     gap: 30px;
 }
 
 .page__primary>ul li{
-    flex: 1 1;
+    width: 160px;
 }
 
 .primary__content_title{
@@ -1103,13 +1133,12 @@ li {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+    gap: 30px;
 }
 
 .schedule_parts {
-    flex: 1 1;
     display: flex;
     flex-direction: column;
-    
 }
 
 .part1 {
@@ -1190,7 +1219,6 @@ li {
 .page__prices {
     display: flex;
     flex-direction: column;
-    overflow-x: visible;
 }
 
 .page__prices__nursary {
@@ -1201,7 +1229,8 @@ li {
 
 .page__prices_preparatory {
     display: flex;
-    align-items: flex-start;justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 70px;
     background-color: #C5E6BA;
     border-radius: 40px;
@@ -1213,7 +1242,7 @@ li {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    height: 42vh;
+    
 }
 
 .nursary_title, .preparatory_title, .primary_title {
@@ -1223,8 +1252,8 @@ li {
 .nursary_photo, .preparatory_photo, .primary_photo {
     position: relative;
     width: 20%;
-    min-width: 365px;
-    min-height: 200px;
+    width: 365px;
+    height: 200px;
     border-radius: 30px; 
 }
 
@@ -1233,7 +1262,6 @@ li {
     width: 100%;
     top: 0;
     left: 0;
-    object-fit: contain;
 }
 
 .prices__nursary_list {
@@ -1282,7 +1310,6 @@ li {
 
 .page__contacts__content {
     display: flex;
-
 }
 
 .contacts__content_pointer{
@@ -1298,7 +1325,7 @@ li {
 
 .page__contacts_iframe {
     width: 100%;
-    min-height: 300px;
+    height: 300px;
     border: 1px solid #1F2E19;
     border-radius: 20px;
     overflow: hidden;
@@ -1329,6 +1356,7 @@ li {
     align-items: center;
     padding: 20px 0;
 }
+
 .footer__logo > img {
     display: block;
 }
@@ -1420,3 +1448,4 @@ li {
 } 
 
 
+  

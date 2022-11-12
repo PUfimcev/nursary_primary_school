@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import KidsPlaying from '../../images/kids_playing_together.png';
 import KidDoHomework from '../../images/kid_do_homework.png';
 import KidSmile from '../../images/kid_smiling.png';
+import { DataContacts } from '../../App';
 
 function Prices() {
+
+	const { screenWidth } = useContext(DataContacts);
 	return (
 		<div className="page__prices">
 			<p className="page__name">KJV / Цены</p>
@@ -18,7 +21,7 @@ function Prices() {
 						<h4>Премиум — <span>580$</span></h4>
 						<ul>
 							<li>Полный месяц</li>
-							<li>Время посещения 8:00 — 19:00</li>
+							<li>Время посещения 8:00 — 19:00</li>
 							<li>5-ти разовое питание</li>
 							<li>Полный пакет занятий</li>
 							<li>Логопедическая и педагогическая диагностика</li>
@@ -50,6 +53,11 @@ function Prices() {
 				</div>
 			</div>
 			<div className="page__prices_preparatory">
+				{screenWidth < 426 && <div className="prices__preparatory_title">
+					<h3 className="preparatory_title">Подготовка к школе</h3>
+					<div className="preparatory_photo"><img src={KidDoHomework} alt="Ребенок делает уроки"></img>
+					</div>
+				</div>}
 				<div className='preparatory_list_price1'>
 					<h4>Премиум — <span>590$</span></h4>
 					<ul>
@@ -61,11 +69,11 @@ function Prices() {
 						<li>Возврат (перерасчет) за пропущенные дни</li>
 					</ul>
 				</div>
-				<div className="prices__preparatory_title">
+				{screenWidth > 425 && <div className="prices__preparatory_title">
 					<h3 className="preparatory_title">Подготовка к школе</h3>
 					<div className="preparatory_photo"><img src={KidDoHomework} alt="Ребенок делает уроки"></img>
 					</div>
-				</div>
+				</div>}
 				<div className='preparatory_list_price2'>
 					<h4>Половина дня — <span>372$</span></h4>
 					<ul>
@@ -80,6 +88,11 @@ function Prices() {
 				</div>
 			</div>
 			<div className="page__prices_primary">
+			{screenWidth < 426 &&<div className="prices__primary_title">
+					<h3 className="primary_title">Начальная школа</h3>
+					<div className="primary_photo"><img src={KidSmile} alt="Ребенок улыбается"></img>
+					</div>
+				</div>}
 				<div className='primary_list_price1'>
 						<h4>Половина дня — <span>470$</span></h4>
 						<ul>
@@ -98,11 +111,11 @@ function Prices() {
 						<li>Занятия по расписанию</li>
 					</ul>
 				</div>
-				<div className="prices__primary_title">
+				{screenWidth > 425 &&<div className="prices__primary_title">
 					<h3 className="primary_title">Начальная школа</h3>
 					<div className="primary_photo"><img src={KidSmile} alt="Ребенок улыбается"></img>
 					</div>
-				</div>
+				</div>}
 			</div>
 		</div>
 	);

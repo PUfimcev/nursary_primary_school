@@ -1,0 +1,25 @@
+@media (max-width: 1024px) {
+    .page__event2_img {
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+    .event2_img {
+        width: 45%;
+    }
+
+    .event2_img>img  {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .page__event2_img {
+        flex-direction: column;
+    }
+    
+    .event2_img {
+        width: 100%;
+    }
+    
+}

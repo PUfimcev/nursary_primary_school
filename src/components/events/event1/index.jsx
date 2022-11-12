@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { MainContext } from '../../Main';
 
 import './style.css';
+import './media.css';
 
 function Event1() {
 

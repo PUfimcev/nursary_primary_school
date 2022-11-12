@@ -17,8 +17,30 @@ const [getDataContact, setgetDataContact] =  useState([]);
 const [dataApply, setDataApply] =  useState([]);
 const [getDataApply, setGetDataApply] =  useState([]);
 
-console.log(dataContact);
-console.log(dataApply);
+const [homeActive, setHomeActive] = useState(false);
+const [aboutActive, setAboutActive] = useState(false);
+const [nursaryActive, setNursaryActive] = useState(false);
+const [schoolActive, setSchoolActive] = useState(false);
+const [pricesActive, setPricesActive] = useState(false);
+const [contactsActive, setContactsActive] = useState(false);
+
+const [screenWidth, setScreenWidth] = useState(0);
+
+useEffect(()=>{
+  window.addEventListener("resize", handleScreenWidth);
+},[])
+
+useEffect(()=>{
+  const screenWidth = window.screen.width;
+  if (!screenWidth) return;
+  setScreenWidth(screenWidth);
+},[])
+
+function handleScreenWidth() {
+  const screenWidth = window.screen.width;
+  if (!screenWidth) return;
+  setScreenWidth(screenWidth);
+}
 
 useEffect(() => {
   if (dataContact.length > 0) {
@@ -49,8 +71,8 @@ useEffect(() => {
   }
 },[dataContact, getDataContact]);
 
-console.log(getDataContact);
-console.log(getDataApply);
+// console.log(getDataContact);
+// console.log(getDataApply);
 
 useEffect(() => {
     if (dataApply.length > 0) {
@@ -82,9 +104,9 @@ useEffect(() => {
 
   return (
     <>
-    <DataContacts.Provider value={{dataContact, setDataContact, dataApply, setDataApply }}>
+    <DataContacts.Provider value={{dataContact, setDataContact, dataApply, setDataApply, homeActive, setHomeActive, aboutActive, setAboutActive,nursaryActive, setNursaryActive, schoolActive, setSchoolActive,pricesActive, setPricesActive, contactsActive, setContactsActive, screenWidth }}>
         <Router>
-            <Header/>
+            <Header screenWidth={{screenWidth}}/>
             <Main/>
             <Footer/>
 		    </Router>

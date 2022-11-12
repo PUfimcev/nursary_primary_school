@@ -1,45 +1,14 @@
-// import React, { useEffect, useState } from "react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { DataContacts } from '../../../App'; 
 import './style.css';
+import './media.css';
 
 function NavFooter() {
 
-    // const [link, setLink] = useState('');
+    const { setHomeActive,  setAboutActive,setNursaryActive,  setSchoolActive, setPricesActive, setContactsActive  } = useContext(DataContacts);
 
-    // useEffect(() => {
-    //     let pathBrows = window.location.pathname.split(/\/*\//)[1];
-    //     let linkPage = link;
-
-    //     if (linkPage === '' || linkPage === null) {
-
-    //         if (pathBrows === 'nursary_primary_school') {
-    //             linkPage = document.querySelector(`nav a[href="/nursary_primary_school/"]`);
-    //             linkPage.classList.add('active');
-    //         } else {
-    //             linkPage = document.querySelector(`.nav__link.${pathBrows}`);
-    //             linkPage.classList.add('active');
-    //         } 
-    //     }
-
-    // }, [link]);
-    
-    function currentPage(event) {     
-        
-        let elem = event.target;
-        if (!elem) return;
-        // setLink(elem);
-
-        let elemTmp = elem.href.split(/\/*\//)[2];
-        elem = document.querySelector(`.nav__link.${elemTmp}`);
-
-        const linkPages = document.querySelectorAll('.nav__link');
-        if (!linkPages) return;
-        
-        linkPages.forEach(elem => {
-            elem.classList.remove('active');
-        });
-        elem.classList.add('active');
+    function removeHover() {     
 
         let elemLi = document.querySelector('.hover');
         if(!elemLi) return;
@@ -66,7 +35,7 @@ function NavFooter() {
 
     function pageTop(){
         let mainElem = document.querySelector('.main__content');
-        mainElem.scrollIntoView({behavior:"smooth", block: "start"})
+        mainElem.scrollIntoView({ block: "start"})
     }
     
     function hoverOut(){
@@ -81,32 +50,32 @@ function NavFooter() {
 	return (
 		<nav className="footer__nav" >
             <ul>
-                <li><Link className="footer__nav__link nursary_primary_school" onClick={()=>{currentPage(); pageTop(); hover();}} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li>
+            <li ><Link id="home"  className="footer__nav__link nursary_primary_school" onClick={()=>{ setHomeActive(true); setAboutActive(false); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false);pageTop();}} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li>
                 <li>
                     <Link className="footer__nav__link about" onClick={hover} >О нас</Link>
                     <ul onMouseLeave={hoverOut}>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/about/about/">O нас</Link></li>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/about/staff/">Наш коллектив</Link></li>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/about/events/">Наши мероприятия</Link></li>
+                        <li><Link onClick={()=>{setAboutActive(true); setHomeActive(false);  setNursaryActive(false);setSchoolActive(false);  setPricesActive(false); setContactsActive(false);   removeHover(); pageTop();}} to="/about/about/">O нас</Link></li>
+                        <li><Link onClick={()=>{setAboutActive(true); setHomeActive(false);  setNursaryActive(false);setSchoolActive(false);  setPricesActive(false); setContactsActive(false);   removeHover(); pageTop();}} to="/about/staff/">Наш коллектив</Link></li>
+                        <li><Link onClick={()=>{setAboutActive(true); setHomeActive(false);  setNursaryActive(false);setSchoolActive(false);  setPricesActive(false); setContactsActive(false);   removeHover(); pageTop();}} to="/about/events/">Наши мероприятия</Link></li>
                     </ul>
                 </li>
                 <li >
                     <Link className="footer__nav__link nursary" onClick={hover} >Сад</Link>
                     <ul onMouseLeave={hoverOut}>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/nursary/junior/">Младшая группа (3-4 года)</Link></li>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/nursary/middle/">Средняя группа (4-5 лет)</Link></li>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/nursary/senior/">Старшая группа (5-6 лет)</Link></li>
+                        <li><Link onClick={()=>{setNursaryActive(true); setHomeActive(false); setAboutActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false);  removeHover(); pageTop();}} to="/nursary/junior/">Младшая группа (3-4 года)</Link></li>
+                        <li><Link onClick={()=>{setNursaryActive(true); setHomeActive(false); setAboutActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false);  removeHover(); pageTop();}} to="/nursary/middle/">Средняя группа (4-5 лет)</Link></li>
+                        <li><Link onClick={()=>{setNursaryActive(true); setHomeActive(false); setAboutActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false);  removeHover(); pageTop();}} to="/nursary/senior/">Старшая группа (5-6 лет)</Link></li>
                     </ul>
                 </li>
                 <li >
                     <Link className="footer__nav__link school" onClick={hover} >Школа</Link>
                     <ul onMouseLeave={hoverOut}>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/school/preparatory/">Подготовка к школе (6-7 лет)</Link></li>
-                        <li><Link onClick={()=>{currentPage(); pageTop();}} to="/school/primary/">Начальная школа (1-4 класс)</Link></li>
+                        <li><Link onClick={()=>{setSchoolActive(true); setHomeActive(false); setAboutActive(false); setNursaryActive(false); setPricesActive(false); setContactsActive(false); removeHover(); pageTop();}} to="/school/preparatory/">Подготовка к школе (6-7 лет)</Link></li>
+                        <li><Link onClick={()=>{setSchoolActive(true); setHomeActive(false); setAboutActive(false); setNursaryActive(false); setPricesActive(false); setContactsActive(false); removeHover(); pageTop();}} to="/school/primary/">Начальная школа (1-4 класс)</Link></li>
                     </ul>
                 </li>
-                <li><Link className="footer__nav__link prices"  onClick={()=>{currentPage(); pageTop();}} onMouseOver={hover} to="/prices/">Цены</Link></li>
-                <li><Link className="footer__nav__link contacts"  onClick={()=>{currentPage(); pageTop();}} onMouseOver={hover} to="/contacts/">Контакты</Link></li>
+                <li><Link className="footer__nav__link prices"  onClick={()=>{setPricesActive(true); setHomeActive(false); setAboutActive(false); setNursaryActive(false); setSchoolActive(false); setContactsActive(false); pageTop();}} onMouseOver={hover} to="/prices/">Цены</Link></li>
+                <li><Link className="footer__nav__link contacts"  onClick={()=>{ setContactsActive(true); setHomeActive(false); setAboutActive(false); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); pageTop();}} onMouseOver={hover} to="/contacts/">Контакты</Link></li>
             </ul>
         </nav>
 	);

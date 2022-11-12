@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+
+    .burger__btn {
+        width: 50%;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .burger__btn {
+        width: 100%;
+    }
+}

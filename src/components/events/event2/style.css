@@ -6,19 +6,12 @@
     
 }
 .page__event2_img {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
     cursor: pointer;
-}
-
-.page__event2_img>img {
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .page__event2__btn-reverse {

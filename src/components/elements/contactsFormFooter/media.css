@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .footer__page__contacts_form {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 425px) {
+    .footer__page__contacts_form {
+        width: 400px;
+        height: 250px;
+    }
+
+    .footer__form__getData {
+        width: 75%;
+    }
+}

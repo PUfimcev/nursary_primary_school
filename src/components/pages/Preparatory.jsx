@@ -3,6 +3,7 @@ import GirlBooks from '../../images/girl_books.png';
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
 
+
 function Preparatory() {
 
 	const { applyData } = useContext(MainContext);
