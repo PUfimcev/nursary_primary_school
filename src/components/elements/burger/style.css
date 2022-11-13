@@ -12,6 +12,7 @@
     padding: 25px 0;
     transform: translateX(100%);
     animation:  toleft 0.8s ease-in-out 0.1s 1 forwards;
+    box-sizing: border-box;
 }
 
 .header__burger__btn {
