@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import KidsPlaying from '../../images/kids_playing_together.png';
 import KidDoHomework from '../../images/kid_do_homework.png';
 import KidSmile from '../../images/kid_smiling.png';
@@ -6,7 +6,12 @@ import { DataContacts } from '../../App';
 
 function Prices() {
 
-	const { screenWidth } = useContext(DataContacts);
+	const { screenWidth, setScrollY } = useContext(DataContacts);
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
+
 	return (
 		<div className="page__prices">
 			<p className="page__name">KJV / Цены</p>

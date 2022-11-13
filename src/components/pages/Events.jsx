@@ -1,11 +1,21 @@
 import { Link } from 'react-router-dom';
-import React, { useContext } from "react";
-import { MainContext } from '../../components/Main';
-    
+import React, { useContext, useEffect } from 'react';
+import { DataContacts } from '../../App';
+// import { MainContext } from '../Main';
 
 function Events() {
+	const {  setScrollY  } = useContext(DataContacts);
 
-	const { pageTop } = useContext(MainContext);
+	// const {  setScrollY } = useContext(MainContext);
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
+
+	function pageTop(){
+        let mainElem = document.querySelector('.main__content');
+        mainElem.scrollIntoView({ block: "start"})
+    }
 
 	return (
 		<><div className="page__events">

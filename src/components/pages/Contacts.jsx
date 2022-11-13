@@ -1,10 +1,17 @@
 import ContactForm from '../elements/contactsForm/ContactForm';
 import GoogleMap from '../../images/map_preloder.png'; 
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+
+import { DataContacts } from '../../App';
 
 function Contacts() {
 
 	const [isLoading, setLoading] = useState(true);
+	const {  setScrollY  } = useContext(DataContacts);
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	function handleOnLoad() {
 		setLoading(false);

@@ -29,6 +29,8 @@
 @media (max-width: 425px) {
 
     .form__content {
+        z-index: 25;
+        top: 0%;
         min-width: 0px;
         min-height:0px;
     }

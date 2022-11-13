@@ -224,7 +224,6 @@
     }
 
     .home__nursary__babies_photo, .home__primary__kids_photo, .home__preparatory__kids_photo, .events__item__photo {
-        width: 350px;
         height: 250px;
     }
     
@@ -421,6 +420,121 @@
         width: 85%;
     }
 
+    /* home */
+
+    .home__present{
+        flex-direction: column-reverse;
+        gap: 30px;
+        margin-bottom: 30px;
+        height: 75vh;
+    }
+
+    .home__present .header__btn{
+        width: 60%;
+        margin: 20px auto;
+        padding: 20px 0;
+    }
+
+    .home__present__content, .home__present__content_photos {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home__present__content {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .home__present__content_photos {
+        height: 100px;
+        margin-top: -40px;
+    }
+
+    .home__present__content_photos div:nth-child(4) > img {
+        width: 100%;
+    }
+    .home__present__content_photos div:nth-child(5) > img {
+        width: 65%;
+    }
+    .home__present__content_photos div:nth-child(6) > img {
+        width: 65%;
+    }
+
+    .home__present__content_photos1 {
+        top: 0%;
+        right: 40%;
+    }
+    
+    .home__present__content_photos2 {
+        top: 0%;
+        right: -10%;
+    }
+    
+    .home__present__content_photos3 {
+        top: 100%;
+        right: 15%;
+    }
+
+    .link__inDetails {
+        display: none;
+    }
+
+    .home__advantages ul {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .advantages__items{
+        width: 100%;
+    }
+
+    .home__primary, .home__nursary{
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    
+    .home__preparatory {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    .home__nursary__content, .home__nursary__photo, .home__preparatory__photo,  .home__preparatory__content, .home__primary__content, .home__primary__photo   {
+        width: 100%;
+    } 
+
+    .home__nursary__link, .home__primary__link, .home__preparatory__link, .events__item__link  {
+        justify-content: space-around;
+    }
+
+
+    .video_content {
+        background-size: cover ;
+        background-position: center;
+        gap: 10px;
+        height: 200px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 30px;
+        margin-bottom: 50px;
+    }
+
+    .video_content_title {
+        width: 80%;
+    }
+
+    .home__review {
+        margin: 0;
+    }
+
+    .review__item__full{
+        width: 100%;
+    }
+
+    .review__full-content {
+        width: 85%;
+    }
+
     /* about */
 
     .about__description {
@@ -444,13 +558,10 @@
 
     /* Staff */
 
-    .staff__list {
-        flex-direction: column;
-    }
+    .staff__nursary .staff__list .staff__items{
+        width: 100%;
+    } 
 
-    .staff__items {
-        width: 90%;
-    }
 
     /* events */
 

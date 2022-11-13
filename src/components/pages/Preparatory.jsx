@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import GirlBooks from '../../images/girl_books.png';
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
+import { DataContacts } from '../../App';
 
 
 function Preparatory() {
 
 	const { applyData } = useContext(MainContext);
+
+	const {  setScrollY  } = useContext(DataContacts);
 	const [appoint, setAppoint] = useState([]);
 	const [button, setButton] = useState([]);
 	const [getNameEduc, setgetNameEduc] = useState('');
@@ -21,6 +24,10 @@ function Preparatory() {
 		});
 		}
 	},[applyData])
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	function showHeaderForm() {
         setButton(true);

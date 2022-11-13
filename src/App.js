@@ -26,6 +26,25 @@ const [contactsActive, setContactsActive] = useState(false);
 
 const [screenWidth, setScreenWidth] = useState(0);
 
+
+
+const [scrollY, setScrollY] = useState(0);
+useEffect(()=>{
+  window.addEventListener("scroll", handleScroll);
+},[])
+
+useEffect(()=>{
+  let scroll = window.scrollY;
+  setScrollY(scroll);
+},[])
+
+function handleScroll() {
+  let scroll = window.scrollY;
+  if (!scroll) return;
+  setScrollY(scroll);
+}
+
+
 useEffect(()=>{
   window.addEventListener("resize", handleScreenWidth);
 },[])
@@ -104,7 +123,7 @@ useEffect(() => {
 
   return (
     <>
-    <DataContacts.Provider value={{dataContact, setDataContact, dataApply, setDataApply, homeActive, setHomeActive, aboutActive, setAboutActive,nursaryActive, setNursaryActive, schoolActive, setSchoolActive,pricesActive, setPricesActive, contactsActive, setContactsActive, screenWidth }}>
+    <DataContacts.Provider value={{dataContact, setDataContact, dataApply, setDataApply, homeActive, setHomeActive, aboutActive, setAboutActive,nursaryActive, setNursaryActive, schoolActive, setSchoolActive,pricesActive, setPricesActive, contactsActive, setContactsActive, screenWidth, setScrollY, scrollY }}>
         <Router>
             <Header screenWidth={{screenWidth}}/>
             <Main/>

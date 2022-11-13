@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { DataContacts } from '../App'; 
 
 function Nav() {
-    const { homeActive, setHomeActive, aboutActive, setAboutActive,nursaryActive, setNursaryActive, schoolActive, setSchoolActive,pricesActive, setPricesActive, contactsActive, setContactsActive  } = useContext(DataContacts);
+    const { homeActive, setHomeActive, aboutActive, setAboutActive,nursaryActive, setNursaryActive, schoolActive, setSchoolActive,pricesActive, setPricesActive, contactsActive, setContactsActive, setScrollY } = useContext(DataContacts);
 
     const home = useRef();
     const about = useRef();
@@ -63,13 +63,14 @@ function Nav() {
 
     function pageTop(){
         let mainElem = document.querySelector('.main__content');
-        mainElem.scrollIntoView({ block: "start"})
+        mainElem.scrollIntoView({ block: "start"});
+        setScrollY(0);
     }
     
 	return (
 		<nav className="nav">
             <ul>
-                <li ><Link ref={home}   className={homeActive ? "nav__link nursary_primary_school active" : "navlink nursary_primary_school"} onClick={()=>{setHomeActive(true); setAboutActive(false); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li> 
+                <li ><Link ref={home}   className={homeActive ? "nav__link nursary_primary_school active" : "navlink nursary_primary_school"} onClick={()=>{setHomeActive(true); setAboutActive(false); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop(); }} onMouseOver={hover} to="/nursary_primary_school/">Главная</Link></li> 
                 <li>
                     <Link ref={about} className={aboutActive ? "nav__link about active" : "nav__link about"} onMouseOver={hover} >О нас</Link>
                     <ul>

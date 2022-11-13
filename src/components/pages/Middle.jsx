@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
+import { DataContacts } from '../../App';
 import KidsCreation from '../../images/kids_creation.png';
 
 function Middle() {
 	const { applyData } = useContext(MainContext);
+	const {  setScrollY  } = useContext(DataContacts);
+
 	const [appoint, setAppoint] = useState([]);
 	const [button, setButton] = useState(false);
 	const [getNameEduc, setgetNameEduc] = useState('');
@@ -19,6 +22,10 @@ function Middle() {
 		});
 		}
 	},[applyData])
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	function showHeaderForm() {
         setButton(true);

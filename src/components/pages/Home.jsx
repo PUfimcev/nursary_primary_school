@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect,  useRef } from "react";
 import { Link } from "react-router-dom";
+
 import { MainContext } from '../Main';
 import { DataContacts } from '../../App';
+
 import Girl from '../../images/Girl.png';
 import Boy from '../../images/Boy.png';
 import GirlBoyBalls from '../../images/GirlBoyBalls.png';
@@ -9,25 +11,29 @@ import GoogleMap from '../../images/map_preloder.png';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Mousewheel } from "swiper";
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
-import 'swiper/modules/pagination/pagination.min.css'
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+
+import HeaderFormContacts from '../elements/headerContactsForm/HeaderFormContacts';
 
 
 function Home() {
 	const { setCreateContent, setNameContent, setContentAbout, ReviewContent } = useContext(MainContext);
-	const { setHomeActive,  setAboutActive, setNursaryActive,  setSchoolActive, setPricesActive,  setContactsActive, screenWidth  } = useContext(DataContacts);
+	const { setHomeActive,  setAboutActive, setNursaryActive,  setSchoolActive, setPricesActive,  setContactsActive, screenWidth, setScrollY  } = useContext(DataContacts);
 
 	const [isLoading, setLoading] = useState(true);
 	const [btn, setBtn] = useState(false);
 	const [indxReview, setIndxReview] = useState(0);
+	const [button, setButton] = useState(false);
 
 	const reviewFull = useRef();
 	const refSlider = useRef();
 
 	function pageTop(){
         let mainElem = document.querySelector('.main__content');
-        mainElem.scrollIntoView({ block: "start"})
+        mainElem.scrollIntoView({ block: "start"});
+		setScrollY(0);
     }
 
 	function handleOnLoad() {
@@ -82,25 +88,10 @@ function Home() {
 		)
 	}
 
-	// function slidePrevNext (data){
-	// 	let slider = refSlider.current;
-	// 	let x = slider.style.transform;
-    //     if (!x) {
-    //         x = 0;
-    //     } else {
-    //         x = x.replace('translateX(', '');
-    //         x = x.replace('%)', '');
-    //         x = Math.abs(x);
-    //     }
-
-    //     x += 25 * (data === 'left' ? -1 : 1);
-    //     const stopPoint = (ReviewContent.length-2)*25;
-	// 	if (x <= stopPoint) slider.style.transform = `translateX(-${x}%)`;
-	// 	if (x > stopPoint)  slider.style.transform = `translateX(0%)`;
-        
-    //     if (x < 0)  slider.style.transform = `translateX(-${stopPoint}%)`;
-    // };
-
+	function showHeaderForm() {
+        setButton(true);
+        return;
+    }
 	
 	return (
 		<div className="page__home">
@@ -109,6 +100,9 @@ function Home() {
 					<h1 className="home__present__content_title">детский сад — начальная школа «Кей-ДЖЕЙ-Ви»</h1>
 					<p className="home__present__content_description">Мы работаем уже более 30 лет! Мы постоянно совершенствуемся, чтобы создавать лучшие условия для творческого и интеллектуального развития учеников.</p>
 					<Link onClick={()=>{setHomeActive(false); setAboutActive(true); setNursaryActive(false); setSchoolActive(false); setPricesActive(false); setContactsActive(false); setPricesActive(false); pageTop();}} className="link__inDetails" to="/about/about/"><span>Подробнее</span><span></span><span className="link__inDetails_arrow"></span></Link>
+					{screenWidth < 426 && <button className="header__btn" onClick={ showHeaderForm }>Заказать звонок</button>}
+                        {button === true && <HeaderFormContacts button={{ setButton}}/>
+                        }
 				</div>
 				<div className="home__present__content_photos">
 					<div className="home__present__content_curcle1"></div>
@@ -236,8 +230,6 @@ function Home() {
 					</Swiper>
 					</div>
             	</div>
-					{/* {isBtnShift && <button className='slider__btn-left' onClick={()=>{ slidePrevNext('left');}}><span>&lt;</span></button>}
-					{isBtnShift && <button className='slider__btn-right' onClick={()=>{ slidePrevNext();}}><span>&gt;</span></button>} */}
 			</div>
 			<div className='page__contacts_iframe home_iframe'>
 				{isLoading && <Preloader/>}

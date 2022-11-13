@@ -7,11 +7,12 @@ import { DataContacts } from '../App';
 
 function Footer() {
     
-    const { setHomeActive,  setAboutActive, setNursaryActive,  setSchoolActive, setPricesActive,  setContactsActive  } = useContext(DataContacts);
+    const { setHomeActive,  setAboutActive, setNursaryActive,  setSchoolActive, setPricesActive,  setContactsActive, setScrollY  } = useContext(DataContacts);
 
     function pageTop(){
         let mainElem = document.querySelector('.main__content');
-        mainElem.scrollIntoView({ block: "start"})
+        mainElem.scrollIntoView({ block: "start"});
+        setScrollY(0);
     }
 
     return (

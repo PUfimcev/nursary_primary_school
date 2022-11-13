@@ -6,7 +6,7 @@ import './media.css';
 
 function NavFooter() {
 
-    const { setHomeActive,  setAboutActive,setNursaryActive,  setSchoolActive, setPricesActive, setContactsActive  } = useContext(DataContacts);
+    const { setHomeActive,  setAboutActive,setNursaryActive,  setSchoolActive, setPricesActive, setContactsActive, setScrollY  } = useContext(DataContacts);
 
     function removeHover() {     
 
@@ -35,7 +35,8 @@ function NavFooter() {
 
     function pageTop(){
         let mainElem = document.querySelector('.main__content');
-        mainElem.scrollIntoView({ block: "start"})
+        mainElem.scrollIntoView({ block: "start"});
+        setScrollY(0);
     }
     
     function hoverOut(){

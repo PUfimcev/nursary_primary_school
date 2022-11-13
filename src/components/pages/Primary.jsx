@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
+import { DataContacts } from '../../App';
 import Image1 from '../../images/primary_image_1.png';
 import Image2 from '../../images/primary_image_2.png';
 import Image3 from '../../images/primary_image_3.png';
@@ -8,10 +9,13 @@ import Image4 from '../../images/primary_image_4.png';
 
 function Primary() {
 	const { applyData } = useContext(MainContext);
+	const {  setScrollY  } = useContext(DataContacts);
+
 	const [appoint, setAppoint] = useState([]);
 	const [button, setButton] = useState(false);
 	const [getNameEduc, setgetNameEduc] = useState('');
 	const [getPriceEduc, setgetPriceEduc] = useState('');
+
 
 	useEffect(()=>{
 		let applyDataPrimary = applyData.filter(item => item.primary);
@@ -22,6 +26,10 @@ function Primary() {
 		});
 		}
 	},[applyData])
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	function showHeaderForm() {
         setButton(true);

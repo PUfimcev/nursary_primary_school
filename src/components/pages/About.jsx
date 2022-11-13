@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import KidsInClass from '../../images/Kids_in_Class.png';
+import { DataContacts } from '../../App';
 
 function About() {
+
+	const {  setScrollY  } = useContext(DataContacts);
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
+
 	return (
 		<div className="page__about">
 			<p className="page__name">KJV / О нас</p>

@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import ApplyForm from '../elements/applyForm/ApplyForm';
 import { MainContext } from '../Main';
 import babyCrawl from '../../images/baby_crawl.png';
+import { DataContacts } from '../../App';
 
 function Junior() {
 	const { applyData } = useContext(MainContext);
+	const {  setScrollY  } = useContext(DataContacts);
+
 	const [appoint, setAppoint] = useState([]);
 	const [button, setButton] = useState(false);
 	const [getNameEduc, setgetNameEduc] = useState('');
@@ -20,7 +23,9 @@ function Junior() {
 		}
 	},[applyData])
 
-	// console.log(appoint)
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	function showHeaderForm() {
         setButton(true);

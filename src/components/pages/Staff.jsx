@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import React, { useRef, useContext, useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Mousewheel } from "swiper";
 import 'swiper/swiper-bundle.min.css'
@@ -37,7 +37,11 @@ function Staff() {
 	const staffList1 = useRef();
 	const staffList2 = useRef();
 
-	const { screenWidth  } = useContext(DataContacts);
+	const { screenWidth, setScrollY  } = useContext(DataContacts);
+
+	useEffect(()=>{
+		setScrollY(0);
+	}, [])
 
 	const nursaryTeacher = [
 		{name: 'ИВАНОВА ГАЛИНА ПЕТРОВНА', position: 'Воспитатель', img: GalinaPetrovna, alt: 'Воспитатель'},
@@ -70,7 +74,7 @@ function Staff() {
 			<div className="staff__nursary">
 				<h3 className="staff__nursary_title">наши воспитатели</h3>
 				<div className="staff__list">
-					{nursaryTeacher.map((item, index) =>{
+					{screenWidth > 425 && nursaryTeacher.map((item, index) =>{
 						return (
 							<div key={index} className="staff__items">
 								<img src={item.img} alt={item.alt}></img><div>
@@ -79,6 +83,34 @@ function Staff() {
 							</div>
 						)
 					})}
+					{screenWidth < 426 && <Swiper
+        				slidesPerView={1}
+        				spaceBetween={30}
+        				// slidesPerGroup={3}
+        				loop={true}
+        				loopFillGroupWithBlank={true}
+        				pagination={{
+        				//   clickable: true,
+						  type: "fraction",
+        				}}
+        				// navigation={screenWidth > 1024 ? true : false}
+						navigation={true}
+        				modules={[Pagination, Navigation, Mousewheel]}
+						mousewheel={true}
+						keyboard={true}
+        				className="mySwiper"
+      >
+							{nursaryTeacher.map((item, index) =>{
+								return (
+									<SwiperSlide key={index}><div  className="staff__items">
+										<img src={item.img} alt={item.alt}></img>
+										<div><span className="staff__name" >{item.name}</span>
+										<span className="staff__position" >{item.position}</span></div>
+									</div>
+									</SwiperSlide>
+								)
+							})}
+							 </Swiper>}
 				</div>
 			</div>
 
@@ -127,7 +159,7 @@ function Staff() {
 					<div className="staff__teachers__wrapper">
 						<div ref={staffList2} className="staff__list list2">
 						<Swiper
-        				slidesPerView={3}
+        				slidesPerView={screenWidth > 425 ? 3 : 1}
         				spaceBetween={30}
         				// slidesPerGroup={3}
         				loop={true}

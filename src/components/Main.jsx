@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -30,10 +30,14 @@ import Review_Image_1 from '../images/home_review_Oleg_Katya.jpg';
 import Review_Image_2 from '../images/home_review_Sveta.jpg';
 import Review_Image_3 from '../images/home_review_Olga.jpg';
 import Review_Image_4 from '../images/home_review_Andr_Ira.jpg';
+import { DataContacts } from '../App'; 
 
 export const MainContext = React.createContext();
 
+
 function Main() {
+
+    const {  scrollY, setScrollY } = useContext(DataContacts);
 
 // Фото событий
     const imgListEvent1 = [Event1_Image_1, Event1_Image_2, Event1_Image_3, Event1_Image_4];
@@ -71,31 +75,22 @@ const ReviewContent = [
 
     const [button, setButton] = useState(false);
     const [widthMain, setWidthMain] = useState(0);
-    const [scrollY, setScrollY] = useState(0);
     const [createContent, setCreateContent] = useState(false);
     const [nameContent, setNameContent] = useState('');
     const [contentAbout, setContentAbout] = useState('');
 
     useEffect(()=>{
-        window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", handleResize);
     },[])
     
     useEffect(()=>{
-        let scroll = window.scrollY;
-        setScrollY(scroll);
         let widthElem = main.current.scrollWidth;
         let offsetLeftElem = main.current.offsetLeft;
         if (!widthElem || !offsetLeftElem) return;
         let width = +offsetLeftElem + +widthElem ;
         setWidthMain(width);
-    },[])
 
-    function handleScroll() {
-        let scroll = window.scrollY;
-        if (!scroll) return;
-        setScrollY(scroll);
-    }
+    },[])
 
     function handleResize() {
         let widthElem = main.current.scrollWidth;
@@ -107,7 +102,7 @@ const ReviewContent = [
 
     function pageTop(){
         let mainElem = main.current;
-        mainElem.scrollIntoView({ block: "start"})
+        mainElem.scrollIntoView({behavior:"smooth", block: "start"});
     }
 
 	function hoverOut(){
@@ -122,7 +117,7 @@ const ReviewContent = [
     return (
         <main className="main">
             <div className='container'>
-                <MainContext.Provider value={{applyData, button, setButton, nameContent, setNameContent, contentAbout, setContentAbout, setCreateContent,  displayContent, pageTop, imgListEvent1, imgListEvent2, imgListReview, ReviewContent}}>
+                <MainContext.Provider value={{applyData, button, setButton, nameContent, setNameContent, contentAbout, setContentAbout, setCreateContent,  displayContent, pageTop, imgListEvent1, imgListEvent2, imgListReview, ReviewContent, setScrollY }}>
                     <div ref={main} className='main__content' onMouseOver={hoverOut} >
                         <Routes>
 					        <Route path="/" element={<Home />} />
@@ -139,7 +134,7 @@ const ReviewContent = [
 					        <Route path="/contacts/" element={<Contacts />} />
                             <Route path="/about/events/:number" element={<Event />} />
 				        </Routes>
-                        {scrollY > 200 && <Anchor  pageTop = { pageTop } widthMain={ widthMain }/>}
+                        {scrollY >= 250 && <Anchor  pageTop = { {pageTop }} widthMain={ {widthMain }}/>}
                         {createContent === true && 
                         <ShowContent/>}
                     </div>
