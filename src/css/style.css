@@ -1327,12 +1327,13 @@ li {
     height: 300px;
     border: 1px solid #1F2E19;
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
 .page__contacts_iframe > iframe, .page__contacts_iframe >.map__preloader {
     position: absolute;
+    border-radius: 20px;
     top: 0;
     left: 0;
     width: 100%;

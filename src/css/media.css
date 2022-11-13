@@ -426,7 +426,7 @@
         flex-direction: column-reverse;
         gap: 30px;
         margin-bottom: 30px;
-        height: 75vh;
+        height: 100vh;
     }
 
     .home__present .header__btn{
