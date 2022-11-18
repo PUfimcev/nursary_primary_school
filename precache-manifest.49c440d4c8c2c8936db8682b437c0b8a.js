@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "741ec3458374b1545371",
-    "url": "/nursary_primary_school/static/css/main.6d97f889.chunk.css"
+    "revision": "3345a27d9a3a010f8db3",
+    "url": "/nursary_primary_school/static/css/main.97c7cf83.chunk.css"
   },
   {
-    "revision": "741ec3458374b1545371",
-    "url": "/nursary_primary_school/static/js/main.741ec345.chunk.js"
+    "revision": "3345a27d9a3a010f8db3",
+    "url": "/nursary_primary_school/static/js/main.3345a27d.chunk.js"
   },
   {
     "revision": "96c36d21bf0c8f3e4c60",
@@ -196,16 +196,16 @@ self.__precacheManifest = [
     "url": "/nursary_primary_school/static/media/kids_playing_together.15c68c0e.png"
   },
   {
+    "revision": "b836fd1bcb803e9983071a090f38cdef",
+    "url": "/nursary_primary_school/static/media/kids_running.b836fd1b.png"
+  },
+  {
     "revision": "424fd01760882acb43b6eb14a31dfb5a",
     "url": "/nursary_primary_school/static/media/Home_Babies.424fd017.png"
   },
   {
     "revision": "022df21c79c0535c4ae0020acb189184",
     "url": "/nursary_primary_school/static/media/poster_video.022df21c.png"
-  },
-  {
-    "revision": "b836fd1bcb803e9983071a090f38cdef",
-    "url": "/nursary_primary_school/static/media/kids_running.b836fd1b.png"
   },
   {
     "revision": "d5381f83a11e17018ce37b1f00e4c5cb",
@@ -220,7 +220,7 @@ self.__precacheManifest = [
     "url": "/nursary_primary_school/static/media/event_congratulation_8th_march.c22621d5.jpg"
   },
   {
-    "revision": "75d2afd801dcaaf026bd24904021ace0",
+    "revision": "63facf18228ae0fa8f3dbed7f5d1ec52",
     "url": "/nursary_primary_school/index.html"
   }
 ];
