@@ -1,7 +1,7 @@
 {
-  "main.css": "/nursary_primary_school/static/css/main.79bda931.chunk.css",
-  "main.js": "/nursary_primary_school/static/js/main.22bf1914.chunk.js",
-  "main.js.map": "/nursary_primary_school/static/js/main.22bf1914.chunk.js.map",
+  "main.css": "/nursary_primary_school/static/css/main.d5b6c82e.chunk.css",
+  "main.js": "/nursary_primary_school/static/js/main.aa3d36b4.chunk.js",
+  "main.js.map": "/nursary_primary_school/static/js/main.aa3d36b4.chunk.js.map",
   "static/css/1.f23dbe25.chunk.css": "/nursary_primary_school/static/css/1.f23dbe25.chunk.css",
   "static/js/1.96c36d21.chunk.js": "/nursary_primary_school/static/js/1.96c36d21.chunk.js",
   "static/js/1.96c36d21.chunk.js.map": "/nursary_primary_school/static/js/1.96c36d21.chunk.js.map",
@@ -52,9 +52,9 @@
   "static/media/primary_image_4.png": "/nursary_primary_school/static/media/primary_image_4.8be0d2d2.png",
   "static/media/kids_playing_together.png": "/nursary_primary_school/static/media/kids_playing_together.15c68c0e.png",
   "static/media/style.css": "/nursary_primary_school/static/media/event_country_Iliinka.1ea4d669.jpg",
+  "static/css/main.d5b6c82e.chunk.css.map": "/nursary_primary_school/static/css/main.d5b6c82e.chunk.css.map",
   "static/css/1.f23dbe25.chunk.css.map": "/nursary_primary_school/static/css/1.f23dbe25.chunk.css.map",
-  "static/css/main.79bda931.chunk.css.map": "/nursary_primary_school/static/css/main.79bda931.chunk.css.map",
   "index.html": "/nursary_primary_school/index.html",
-  "precache-manifest.e399be330e80eade967f114b8abddc10.js": "/nursary_primary_school/precache-manifest.e399be330e80eade967f114b8abddc10.js",
+  "precache-manifest.ba99aa8d4a5b51215a2bcf1905d74dd1.js": "/nursary_primary_school/precache-manifest.ba99aa8d4a5b51215a2bcf1905d74dd1.js",
   "service-worker.js": "/nursary_primary_school/service-worker.js"
 }

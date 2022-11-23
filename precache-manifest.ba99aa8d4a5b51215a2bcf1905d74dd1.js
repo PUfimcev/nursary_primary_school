@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "22bf1914846a2cf4b9e9",
-    "url": "/nursary_primary_school/static/css/main.79bda931.chunk.css"
+    "revision": "aa3d36b4e92496272643",
+    "url": "/nursary_primary_school/static/css/main.d5b6c82e.chunk.css"
   },
   {
-    "revision": "22bf1914846a2cf4b9e9",
-    "url": "/nursary_primary_school/static/js/main.22bf1914.chunk.js"
+    "revision": "aa3d36b4e92496272643",
+    "url": "/nursary_primary_school/static/js/main.aa3d36b4.chunk.js"
   },
   {
     "revision": "96c36d21bf0c8f3e4c60",
@@ -196,16 +196,16 @@ self.__precacheManifest = [
     "url": "/nursary_primary_school/static/media/kids_playing_together.15c68c0e.png"
   },
   {
+    "revision": "424fd01760882acb43b6eb14a31dfb5a",
+    "url": "/nursary_primary_school/static/media/Home_Babies.424fd017.png"
+  },
+  {
     "revision": "d5381f83a11e17018ce37b1f00e4c5cb",
     "url": "/nursary_primary_school/static/media/kids_learning.d5381f83.png"
   },
   {
     "revision": "b836fd1bcb803e9983071a090f38cdef",
     "url": "/nursary_primary_school/static/media/kids_running.b836fd1b.png"
-  },
-  {
-    "revision": "424fd01760882acb43b6eb14a31dfb5a",
-    "url": "/nursary_primary_school/static/media/Home_Babies.424fd017.png"
   },
   {
     "revision": "022df21c79c0535c4ae0020acb189184",
@@ -220,7 +220,7 @@ self.__precacheManifest = [
     "url": "/nursary_primary_school/static/media/event_country_Iliinka.1ea4d669.jpg"
   },
   {
-    "revision": "18d6ea42c2790e6d6a0dd2b0218165ae",
+    "revision": "795d50e01e6d55a44e00aadeb0d035eb",
     "url": "/nursary_primary_school/index.html"
   }
 ];

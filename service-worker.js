@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/nursary_primary_school/precache-manifest.e399be330e80eade967f114b8abddc10.js"
+  "/nursary_primary_school/precache-manifest.ba99aa8d4a5b51215a2bcf1905d74dd1.js"
 );
 
 workbox.clientsClaim();
