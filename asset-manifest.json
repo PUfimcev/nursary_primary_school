@@ -1,7 +1,7 @@
 {
-  "main.css": "/nursary_primary_school/static/css/main.97c7cf83.chunk.css",
-  "main.js": "/nursary_primary_school/static/js/main.3345a27d.chunk.js",
-  "main.js.map": "/nursary_primary_school/static/js/main.3345a27d.chunk.js.map",
+  "main.css": "/nursary_primary_school/static/css/main.e0f4956b.chunk.css",
+  "main.js": "/nursary_primary_school/static/js/main.ebbb0166.chunk.js",
+  "main.js.map": "/nursary_primary_school/static/js/main.ebbb0166.chunk.js.map",
   "static/css/1.f23dbe25.chunk.css": "/nursary_primary_school/static/css/1.f23dbe25.chunk.css",
   "static/js/1.96c36d21.chunk.js": "/nursary_primary_school/static/js/1.96c36d21.chunk.js",
   "static/js/1.96c36d21.chunk.js.map": "/nursary_primary_school/static/js/1.96c36d21.chunk.js.map",
@@ -51,10 +51,10 @@
   "static/media/primary_image_3.png": "/nursary_primary_school/static/media/primary_image_3.574c2db7.png",
   "static/media/primary_image_4.png": "/nursary_primary_school/static/media/primary_image_4.8be0d2d2.png",
   "static/media/kids_playing_together.png": "/nursary_primary_school/static/media/kids_playing_together.15c68c0e.png",
-  "static/media/style.css": "/nursary_primary_school/static/media/event_congratulation_8th_march.c22621d5.jpg",
-  "static/css/main.97c7cf83.chunk.css.map": "/nursary_primary_school/static/css/main.97c7cf83.chunk.css.map",
+  "static/media/style.css": "/nursary_primary_school/static/media/poster_video.022df21c.png",
+  "static/css/main.e0f4956b.chunk.css.map": "/nursary_primary_school/static/css/main.e0f4956b.chunk.css.map",
   "static/css/1.f23dbe25.chunk.css.map": "/nursary_primary_school/static/css/1.f23dbe25.chunk.css.map",
   "index.html": "/nursary_primary_school/index.html",
-  "precache-manifest.49c440d4c8c2c8936db8682b437c0b8a.js": "/nursary_primary_school/precache-manifest.49c440d4c8c2c8936db8682b437c0b8a.js",
+  "precache-manifest.07fca30c5317a981035460357b4a3dd1.js": "/nursary_primary_school/precache-manifest.07fca30c5317a981035460357b4a3dd1.js",
   "service-worker.js": "/nursary_primary_school/service-worker.js"
 }
